@@ -17,7 +17,7 @@ export function InteractiveDemo() {
   const activeSrc = styles.find(s => s.name === activeStyle)?.src;
 
   return (
-    <section className="py-32 px-8 bg-white overflow-hidden dark:bg-slate-950">
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden dark:bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -25,11 +25,11 @@ export function InteractiveDemo() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-heading text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4">Interactive Demo</h2>
-          <h3 className="font-heading text-4xl md:text-5xl font-bold text-on-surface tracking-tight">One Prompt. Endless Styles.</h3>
+          <h2 className="font-heading text-xs md:text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4">Interactive Demo</h2>
+          <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface tracking-tight">One Prompt. Endless Styles.</h3>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-surface-container-lowest rounded-4xl p-8 md:p-12 border border-slate-100 dark:border-slate-800 shadow-2xl shadow-blue-500/5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center bg-surface-container-lowest rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 border border-slate-100 dark:border-slate-800 shadow-2xl shadow-blue-500/5">
           {/* Left: Prompt Simulation */}
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
@@ -51,9 +51,9 @@ export function InteractiveDemo() {
                 <span className="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700" />
               </div>
               
-              <div className="flex items-center gap-4 bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
-                <Search className="text-primary w-5 h-5" />
-                <div className="font-sans text-on-surface font-medium typing-effect h-6 flex items-center">
+              <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 dark:bg-slate-800 p-3 sm:p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+                <Search className="text-primary w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+                <div className="font-sans text-on-surface font-medium text-sm sm:text-base typing-effect h-6 flex items-center">
                   A translucent blue jelly fox...
                 </div>
               </div>
@@ -82,9 +82,9 @@ export function InteractiveDemo() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-slate-900 rounded-3xl p-4 md:p-8 shadow-inner border border-slate-100 dark:border-slate-800 h-full flex flex-col justify-center"
+            className="bg-white dark:bg-slate-900 rounded-[2rem] p-5 md:p-8 shadow-inner border border-slate-100 dark:border-slate-800 h-full flex flex-col justify-center"
           >
-            <div className="aspect-square w-full max-w-[400px] mx-auto relative group flex items-center justify-center">
+            <div className="aspect-square w-full max-w-[300px] md:max-w-[400px] mx-auto relative group flex items-center justify-center">
               {/* Main Image Display */}
               <div className="relative z-10 w-full h-full flex items-center justify-center">
                 <AnimatePresence mode="wait">
@@ -106,7 +106,7 @@ export function InteractiveDemo() {
             </div>
 
             {/* Style Controls */}
-            <div className="mt-8 grid grid-cols-4 gap-3">
+            <div className="mt-8 grid grid-cols-2 min-[400px]:grid-cols-4 gap-3">
               {styles.map((style) => (
                 <button 
                   key={style.name}
@@ -135,11 +135,11 @@ export function InteractiveDemo() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 flex justify-center"
+          className="mt-16 md:mt-20 flex justify-center"
         >
-          <button className="bg-primary hover:bg-primary-container text-white px-10 py-4 rounded-full font-heading font-bold flex items-center gap-3 transition-all duration-300 shadow-xl shadow-primary/10">
+          <button className="bg-primary hover:bg-primary-container text-white px-8 md:px-10 py-3.5 md:py-4 rounded-full font-heading font-bold text-sm md:text-base flex items-center gap-2 md:gap-3 transition-all duration-300 shadow-xl shadow-primary/10">
             Generate for Free
-            <ArrowRight className="w-5 h-5" />
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
           </button>
         </motion.div>
       </div>
@@ -172,7 +172,7 @@ export function Personas() {
   ];
 
   return (
-    <section className="py-32 px-8 bg-surface">
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -180,10 +180,10 @@ export function Personas() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-on-surface tracking-tight">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface tracking-tight">
             Built for the Modern Creator.
           </h2>
-          <p className="mt-4 text-on-surface-variant font-sans max-w-xl mx-auto">
+          <p className="mt-4 text-on-surface-variant font-sans text-sm md:text-base max-w-xl mx-auto">
             Custom-tailored workflows for the designers of tomorrow.
           </p>
         </motion.div>
@@ -209,8 +209,8 @@ export function Personas() {
                   }}
                 />
               </div>
-              <div className="p-8">
-                <h4 className="font-heading text-xl font-bold mb-3 text-on-surface">{persona.title}</h4>
+              <div className="p-6 md:p-8">
+                <h4 className="font-heading text-lg md:text-xl font-bold mb-2 md:mb-3 text-on-surface">{persona.title}</h4>
                 <p className="font-sans text-sm text-on-surface-variant leading-relaxed">
                   {persona.description}
                 </p>

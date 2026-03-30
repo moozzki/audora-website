@@ -8,7 +8,7 @@ export function PricingTable() {
   const [currency, setCurrency] = useState<"IDR" | "USD">("IDR");
 
   return (
-    <div className="max-w-[1440px] mx-auto px-8 w-full">
+    <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
       {/* Hero Section */}
       <section className="text-center mb-24 max-w-4xl mx-auto">
         <motion.div
@@ -24,7 +24,7 @@ export function PricingTable() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="font-headline font-bold text-6xl md:text-7xl tracking-tighter text-on-surface mb-6 leading-[0.95]"
+          className="font-headline font-bold text-5xl md:text-6xl lg:text-7xl tracking-tighter text-on-surface mb-6 leading-[1.05] md:leading-[0.95]"
         >
           Pay As You Go.<br />
           <span className="text-primary-container">No Strings Attached.</span>
@@ -34,7 +34,7 @@ export function PricingTable() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-on-surface-variant text-xl md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-on-surface-variant text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed"
         >
           Stop paying for unused subscriptions. Buy credits once, generate stunning 3D icons anytime. Your credits never expire.
         </motion.p>
@@ -44,7 +44,7 @@ export function PricingTable() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-outline-variant/15"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 py-6 md:py-8 border-y border-outline-variant/15"
         >
           {[
             { icon: CheckCircle2, text: "Credits Never Expire" },
@@ -52,8 +52,8 @@ export function PricingTable() {
             { icon: Award, text: "30-Day Money-Back" },
             { icon: Gauge, text: "Instant 3D Delivery" },
           ].map((item, i) => (
-            <div key={i} className="flex items-center justify-center gap-2 text-sm font-medium text-on-surface-variant">
-              <item.icon className="w-5 h-5 text-primary" />
+            <div key={i} className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 text-xs sm:text-sm font-medium text-on-surface-variant text-center">
+              <item.icon className="w-5 h-5 text-primary shrink-0" />
               {item.text}
             </div>
           ))}
@@ -92,14 +92,14 @@ export function PricingTable() {
       </motion.div>
 
       {/* Pricing Cards */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-end mb-24">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch lg:items-end mb-24 cursor-default">
         {/* Starter */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="p-10 rounded-xl bg-surface-container-low flex flex-col h-full border border-transparent hover:bg-surface-container-high transition-colors group"
+          className="p-8 lg:p-10 rounded-2xl bg-surface-container-low flex flex-col h-full border border-transparent hover:bg-surface-container-high transition-colors group"
         >
           <div className="mb-8">
             <span className="text-3xl mb-4 block">🥉</span>
@@ -134,9 +134,9 @@ export function PricingTable() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="p-10 rounded-xl bg-surface-container-lowest shadow-[0_12px_40px_rgba(26,28,28,0.06)] flex flex-col h-full relative border-t-4 border-primary-container z-10 lg:scale-105"
+          className="p-8 lg:p-10 rounded-2xl bg-surface-container-lowest shadow-[0_12px_40px_rgba(26,28,28,0.06)] flex flex-col h-full relative mt-4 md:mt-0 border-t-4 border-primary-container z-10 lg:scale-105"
         >
-          <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary-container text-white px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-white px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
             🔥 MOST POPULAR
           </div>
           <div className="mb-8">
@@ -180,7 +180,7 @@ export function PricingTable() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="p-10 rounded-xl bg-surface-container-low flex flex-col h-full border border-transparent hover:bg-surface-container-high transition-colors group"
+          className="p-8 lg:p-10 rounded-2xl bg-surface-container-low flex flex-col h-full border border-transparent hover:bg-surface-container-high transition-colors group md:col-span-2 lg:col-span-1"
         >
           <div className="mb-8">
             <div className="flex justify-between items-start">
@@ -229,7 +229,7 @@ export function PricingTable() {
             <p className="text-sm font-bold text-on-surface tracking-tight">Accepted Payment Methods</p>
             <p className="text-xs text-on-surface-variant">🔒 Secure checkout powered by Midtrans/Polar.</p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-6 opacity-60 hover:opacity-100 transition-opacity">
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6 opacity-60 hover:opacity-100 transition-opacity">
             {["QRIS", "BCA", "MANDIRI", "GOPAY", "OVO"].map(method => (
               <div key={method} className="text-xs font-black italic text-on-surface-variant tracking-tighter">{method}</div>
             ))}
@@ -269,10 +269,10 @@ export function PricingTable() {
       </section>
 
       {/* FAQ Section */}
-      <section className="max-w-3xl mx-auto mb-20">
+      <section className="max-w-3xl mx-auto mb-20 px-4 md:px-0">
         <motion.h2
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="font-headline font-bold text-4xl mb-12 text-center"
+          className="font-headline font-bold text-3xl md:text-4xl mb-8 md:mb-12 text-center"
         >
           Frequently Asked Questions
         </motion.h2>
