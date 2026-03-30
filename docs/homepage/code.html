@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline-variant": "#c6c4d9",
+              "on-error-container": "#93000a",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary": "#4949ff",
+              "on-primary-container": "#e5e3ff",
+              "error-container": "#ffdad6",
+              "secondary": "#595a86",
+              "on-secondary-container": "#535480",
+              "inverse-surface": "#2f3131",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed": "#07006c",
+              "inverse-primary": "#c0c1ff",
+              "surface-bright": "#f9f9f9",
+              "surface-tint": "#403ef7",
+              "on-secondary-fixed": "#16173f",
+              "secondary-container": "#cacafd",
+              "surface-container-low": "#f3f3f3",
+              "tertiary-fixed": "#ffdbcf",
+              "on-background": "#1a1c1c",
+              "error": "#ba1a1a",
+              "primary-container": "#4949ff",
+              "tertiary": "#8e2e00",
+              "on-surface": "#1a1c1c",
+              "tertiary-container": "#b63e00",
+              "surface-variant": "#e2e2e2",
+              "inverse-on-surface": "#f0f1f1",
+              "tertiary-fixed-dim": "#ffb59a",
+              "surface-dim": "#dadada",
+              "primary-fixed-dim": "#c0c1ff",
+              "on-tertiary-container": "#ffdfd4",
+              "on-tertiary-fixed-variant": "#802900",
+              "on-primary-fixed-variant": "#2113e1",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#c2c2f5",
+              "on-secondary-fixed-variant": "#42436d",
+              "surface-container": "#eeeeee",
+              "background": "#f9f9f9",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#e1e0ff",
+              "on-tertiary-fixed": "#380d00",
+              "on-surface-variant": "#454556",
+              "surface-container-highest": "#e2e2e2",
+              "surface-container-high": "#e8e8e8",
+              "surface": "#f9f9f9",
+              "primary-fixed": "#e1e0ff",
+              "outline": "#767588"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem",
+              "2xl": "1rem",
+              "3xl": "1.5rem",
+              "4xl": "2.5rem"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(73, 73, 255, 0.05) 0%, rgba(249, 249, 249, 0) 70%);
+        }
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -20px rgba(73, 73, 255, 0.15);
+        }
+        .glass-icon {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #4949ff; }
+        }
+        .typing-effect {
+            overflow: hidden;
+            border-right: 2px solid #4949ff;
+            white-space: nowrap;
+            letter-spacing: -0.01em;
+            animation: 
+                typing 3.5s steps(40, end) infinite,
+                blink-caret .75s step-end infinite;
+        }
+        .style-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .persona-card {
+            transition: all 0.3s ease;
+        }
+        .persona-card:hover {
+            border-color: #4949ff;
+            background: #ffffff;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm shadow-blue-500/5">
+<nav class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto"><div class="flex items-center gap-12">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white font-headline" style="">Audora</div>
+<div class="hidden md:flex items-center gap-8 font-headline font-medium text-sm tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300" href="#" style="">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300" href="#" style="">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300" href="#" style="">Blogs</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:opacity-80 transition-all duration-300" style="">Sign In</button>
+<button class="bg-primary hover:bg-primary-container text-white px-6 py-2.5 rounded-full text-sm font-semibold scale-95 active:scale-90 transition-transform" style="">Try for Free</button>
+</div></nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col items-center justify-center px-6 overflow-hidden hero-gradient">
+<div class="max-w-4xl text-center z-10">
+<span class="inline-block py-1 px-3 mb-6 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-label font-bold tracking-widest uppercase" style="">join beta now ✨</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface tracking-tighter mb-8 leading-[1.1]" style="">
+                    Create 3D Icons <br/><span class="text-primary" style="">in Seconds</span>
+</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl mx-auto mb-12" style="">
+                    Transform text prompts into high-fidelity 3D assets. Audora combines advanced neural rendering with a sleek studio workflow.
+                </p>
+<!-- Prompt Bar Component -->
+<div class="max-w-3xl mx-auto mb-4 relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary-container rounded-full blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
+<div class="relative glass-card flex items-center p-2 rounded-full border border-white/40 shadow-xl">
+<div class="flex-shrink-0 ml-4 mr-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="auto_awesome" style="">auto_awesome</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface font-body py-4 placeholder:text-outline-variant" placeholder="A futuristic chrome sphere with organic floating rings..." type="text"/>
+<button class="bg-primary hover:bg-primary-container text-white px-8 py-4 rounded-full font-headline font-bold flex items-center gap-2 transition-all duration-300 transform hover:translate-x-1 shadow-lg shadow-primary/20" style="">
+                            Generate
+                            <span class="material-symbols-outlined" data-icon="bolt" data-weight="fill" style='font-variation-settings: "FILL" 1;'>bolt</span>
+</button>
+</div>
+</div>
+<p class="text-sm font-body text-outline font-medium mb-12" style="">Generate for free. No credit card required.</p>
+<!-- Preview Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto opacity-80">
+<div class="aspect-square rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center p-4">
+<img class="w-full h-full object-contain rounded-full" data-alt="iridescent 3D glass heart icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbi3I0vtI3QjcKRAIkyMJr0n9JEwa_Ypv2x_jiczqzht-BHpi8fKRS3Db_tTE8njFxu2k5otWYqYGPN-CPVKfpkhJ5ZSX2tVYH7CXLm9rYGTUyK180mWClQVsrfiI68_MriHSusa28WZj-QPIKFOBScNj9Cx8mLfjChgECcbIaZCoRO0Xir_8YB_5Y-EYmubNo-NceECQAuVxUlXEwVvZsuO6T3pImjgfeUirmKgt3oo0RUrjSy7ZvnyodckzBvHLoZdh3QlD6sg1m" style=""/>
+</div>
+<div class="aspect-square rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center p-4 mt-8">
+<img class="w-full h-full object-contain rounded-full" data-alt="matte blue 3D geometric abstract shape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1QNQo4HLrZD3ZHsEzXFfM9VrUr3STAXl4mA2BuNYfmb5DFhtn1SNyUPjaysNQ_vy7dqxtVw0O1zk52EBG7hdMsfp6MJNPGJGwGcf-tlOgXNfqy2dmc8EZl20jG9hTgRQ-Fmu0JxXqJXK-KjqvqhMoURGw3w0ElV1GYYkVRxXtNNXR0SNXQhrrIaZaINkdxO8q-2X7qishrxpQtSESYWu2kAaHW9aF-RXkB_ShnB04YDCw9A2L6J2PHR0OVygZkq1fS-r-ibKJnNAl" style=""/>
+</div>
+<div class="aspect-square rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center p-4">
+<img class="w-full h-full object-contain rounded-full" data-alt="floating golden 3D coin icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHexTojLD2ygmEtEVG5JcK_m22KAAKirEo6oY3y8DQBZrTvtZX18-nu1CXbwcx9HOiWw0Nf_LtxUmBkHX_ez2ph2C4vz6EJ1v3QGZ42awBgqZPF3SbsIHvgoCbwfTu2fE0bmiMWWqF2yAqlcLEV4_k6UlwB-5z-oc_hYp013-wSJaj2dU6gAjNmwIiBE0rhskynJ5QjCh_P6zKeOo7fE8HffyfnwMwjeuC8viMiVl7yTBnrNhEgJOr6xZnQP84i__cRGGWTgabFreY" style=""/>
+</div>
+<div class="aspect-square rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center p-4 mt-8">
+<img class="w-full h-full object-contain rounded-full" data-alt="vibrant purple and teal 3D abstract fluid blob" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_qy69q7ZG1YvihmEYTU-UppzgIj8lYEZEvkYJzZK77NtmUa6THxiI9aWYCQetOKjuXgyeZ6U11a-KH9CJa55sL13ClFUUiwfAgkTOPntcuw_sjSV2fvFoVqhnMTQDpAgRslrnaHqS2BnIssd81Nbsvr3hdrksigu2bl39bshwsjL8-ik99SZwIGgi_9XhUr1KmINSemtbxtT-wYHpPih7FDtgpfFly0hKFfYHb31mSOn7Z-GDtoOfkT4-B4zWS9moWBHvl2OqqwC" style=""/>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Demo Section -->
+<section class="py-32 px-8 bg-white overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4" style="">Interactive Demo</h2>
+<h3 class="font-headline text-4xl md:text-5xl font-bold text-on-surface tracking-tight" style="">One Prompt. Endless Styles.</h3>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-surface-container-lowest rounded-4xl p-8 md:p-12 border border-slate-100 shadow-2xl shadow-blue-500/5">
+<!-- Left: Prompt Simulation -->
+<div class="space-y-8">
+<div class="space-y-4">
+<h4 class="font-headline text-2xl font-bold" style="">Intuitive Prompting</h4>
+<p class="text-on-surface-variant font-body leading-relaxed" style="">Our neural engine interprets your creative vision instantly. Just describe it, and Audora generates a physics-accurate 3D model.</p>
+</div>
+<div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 relative overflow-hidden">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-3 h-3 rounded-full bg-slate-200"></span>
+<span class="w-3 h-3 rounded-full bg-slate-200"></span>
+<span class="w-3 h-3 rounded-full bg-slate-200"></span>
+</div>
+<div class="flex items-center gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="search" style="">search</span>
+<div class="font-body text-on-surface font-medium typing-effect h-6 flex items-center" style="">
+                                    A translucent blue jelly fox...
+                                </div>
+</div>
+<!-- Simulation UI -->
+<div class="mt-6 flex flex-wrap gap-2">
+<div class="px-3 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-bold border border-primary/10" style="">#LowPoly</div>
+<div class="px-3 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-bold border border-primary/10" style="">#StudioLighting</div>
+<div class="px-3 py-1.5 rounded-full bg-primary/5 text-primary text-xs font-bold border border-primary/10" style="">#4K</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm" data-icon="bolt" style="">bolt</span>
+</div>
+<span class="text-sm font-bold font-headline uppercase tracking-widest text-slate-400" style="">Generated in 1.2s</span>
+</div>
+</div>
+<!-- Right: Style Switcher -->
+<div class="bg-white rounded-3xl p-4 md:p-8 shadow-inner border border-slate-100 h-full flex flex-col justify-center">
+<div class="aspect-square w-full max-w-[400px] mx-auto relative group flex items-center justify-center">
+<!-- Main Image Display -->
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<img class="w-full h-full object-contain style-transition" data-alt="3D jelly fox style" id="demo-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbi3I0vtI3QjcKRAIkyMJr0n9JEwa_Ypv2x_jiczqzht-BHpi8fKRS3Db_tTE8njFxu2k5otWYqYGPN-CPVKfpkhJ5ZSX2tVYH7CXLm9rYGTUyK180mWClQVsrfiI68_MriHSusa28WZj-QPIKFOBScNj9Cx8mLfjChgECcbIaZCoRO0Xir_8YB_5Y-EYmubNo-NceECQAuVxUlXEwVvZsuO6T3pImjgfeUirmKgt3oo0RUrjSy7ZvnyodckzBvHLoZdh3QlD6sg1m" style=""/>
+</div>
+<!-- Decorative blur -->
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</div>
+<!-- Style Controls -->
+<div class="mt-8 grid grid-cols-4 gap-3">
+<button class="group flex flex-col items-center gap-2" onclick="document.getElementById('demo-image').src='https://lh3.googleusercontent.com/aida-public/AB6AXuDbi3I0vtI3QjcKRAIkyMJr0n9JEwa_Ypv2x_jiczqzht-BHpi8fKRS3Db_tTE8njFxu2k5otWYqYGPN-CPVKfpkhJ5ZSX2tVYH7CXLm9rYGTUyK180mWClQVsrfiI68_MriHSusa28WZj-QPIKFOBScNj9Cx8mLfjChgECcbIaZCoRO0Xir_8YB_5Y-EYmubNo-NceECQAuVxUlXEwVvZsuO6T3pImjgfeUirmKgt3oo0RUrjSy7ZvnyodckzBvHLoZdh3QlD6sg1m'" style="">
+<div class="w-full aspect-square bg-slate-100 rounded-xl overflow-hidden border-2 border-primary ring-4 ring-primary/10 style-transition hover:scale-105">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbi3I0vtI3QjcKRAIkyMJr0n9JEwa_Ypv2x_jiczqzht-BHpi8fKRS3Db_tTE8njFxu2k5otWYqYGPN-CPVKfpkhJ5ZSX2tVYH7CXLm9rYGTUyK180mWClQVsrfiI68_MriHSusa28WZj-QPIKFOBScNj9Cx8mLfjChgECcbIaZCoRO0Xir_8YB_5Y-EYmubNo-NceECQAuVxUlXEwVvZsuO6T3pImjgfeUirmKgt3oo0RUrjSy7ZvnyodckzBvHLoZdh3QlD6sg1m" style=""/>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-primary" style="">Glass</span>
+</button>
+<button class="group flex flex-col items-center gap-2" onclick="document.getElementById('demo-image').src='https://lh3.googleusercontent.com/aida-public/AB6AXuB1QNQo4HLrZD3ZHsEzXFfM9VrUr3STAXl4mA2BuNYfmb5DFhtn1SNyUPjaysNQ_vy7dqxtVw0O1zk52EBG7hdMsfp6MJNPGJGwGcf-tlOgXNfqy2dmc8EZl20jG9hTgRQ-Fmu0JxXqJXK-KjqvqhMoURGw3w0ElV1GYYkVRxXtNNXR0SNXQhrrIaZaINkdxO8q-2X7qishrxpQtSESYWu2kAaHW9aF-RXkB_ShnB04YDCw9A2L6J2PHR0OVygZkq1fS-r-ibKJnNAl'" style="">
+<div class="w-full aspect-square bg-slate-100 rounded-xl overflow-hidden border border-slate-200 style-transition hover:scale-105">
+<img class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1QNQo4HLrZD3ZHsEzXFfM9VrUr3STAXl4mA2BuNYfmb5DFhtn1SNyUPjaysNQ_vy7dqxtVw0O1zk52EBG7hdMsfp6MJNPGJGwGcf-tlOgXNfqy2dmc8EZl20jG9hTgRQ-Fmu0JxXqJXK-KjqvqhMoURGw3w0ElV1GYYkVRxXtNNXR0SNXQhrrIaZaINkdxO8q-2X7qishrxpQtSESYWu2kAaHW9aF-RXkB_ShnB04YDCw9A2L6J2PHR0OVygZkq1fS-r-ibKJnNAl" style=""/>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-slate-400 group-hover:text-primary style-transition" style="">Plastic</span>
+</button>
+<button class="group flex flex-col items-center gap-2" onclick="document.getElementById('demo-image').src='https://lh3.googleusercontent.com/aida-public/AB6AXuBHexTojLD2ygmEtEVG5JcK_m22KAAKirEo6oY3y8DQBZrTvtZX18-nu1CXbwcx9HOiWw0Nf_LtxUmBkHX_ez2ph2C4vz6EJ1v3QGZ42awBgqZPF3SbsIHvgoCbwfTu2fE0bmiMWWqF2yAqlcLEV4_k6UlwB-5z-oc_hYp013-wSJaj2dU6gAjNmwIiBE0rhskynJ5QjCh_P6zKeOo7fE8HffyfnwMwjeuC8viMiVl7yTBnrNhEgJOr6xZnQP84i__cRGGWTgabFreY'" style="">
+<div class="w-full aspect-square bg-slate-100 rounded-xl overflow-hidden border border-slate-200 style-transition hover:scale-105">
+<img class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHexTojLD2ygmEtEVG5JcK_m22KAAKirEo6oY3y8DQBZrTvtZX18-nu1CXbwcx9HOiWw0Nf_LtxUmBkHX_ez2ph2C4vz6EJ1v3QGZ42awBgqZPF3SbsIHvgoCbwfTu2fE0bmiMWWqF2yAqlcLEV4_k6UlwB-5z-oc_hYp013-wSJaj2dU6gAjNmwIiBE0rhskynJ5QjCh_P6zKeOo7fE8HffyfnwMwjeuC8viMiVl7yTBnrNhEgJOr6xZnQP84i__cRGGWTgabFreY'" style=""/>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-slate-400 group-hover:text-primary style-transition" style="">Metallic</span>
+</button>
+<button class="group flex flex-col items-center gap-2" onclick="document.getElementById('demo-image').src='https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_qy69q7ZG1YvihmEYTU-UppzgIj8lYEZEvkYJzZK77NtmUa6THxiI9aWYCQetOKjuXgyeZ6U11a-KH9CJa55sL13ClFUUiwfAgkTOPntcuw_sjSV2fvFoVqhnMTQDpAgRslrnaHqS2BnIssd81Nbsvr3hdrksigu2bl39bshwsjL8-ik99SZwIGgi_9XhUr1KmINSemtbxtT-wYHpPih7FDtgpfFly0hKFfYHb31mSOn7Z-GDtoOfkT4-B4zWS9moWBHvl2OqqwC'" style="">
+<div class="w-full aspect-square bg-slate-100 rounded-xl overflow-hidden border border-slate-200 style-transition hover:scale-105">
+<img class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_qy69q7ZG1YvihmEYTU-UppzgIj8lYEZEvkYJzZK77NtmUa6THxiI9aWYCQetOKjuXgyeZ6U11a-KH9CJa55sL13ClFUUiwfAgkTOPntcuw_sjSV2fvFoVqhnMTQDpAgRslrnaHqS2BnIssd81Nbsvr3hdrksigu2bl39bshwsjL8-ik99SZwIGgi_9XhUr1KmINSemtbxtT-wYHpPih7FDtgpfFly0hKFfYHb31mSOn7Z-GDtoOfkT4-B4zWS9moWBHvl2OqqwC" style=""/>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-slate-400 group-hover:text-primary style-transition" style="">Plush</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-20 flex justify-center">
+<button class="bg-primary hover:bg-primary-container text-white px-10 py-4 rounded-full font-headline font-bold flex items-center gap-3 transition-all duration-300 shadow-xl shadow-primary/10" style="">Generate for Free<span class="material-symbols-outlined text-xl" data-icon="arrow_forward" style="">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Core Features Section (Bento Grid) -->
+<section class="py-32 px-8 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface tracking-tight" style="">The Ultimate 3D Creative Suite</h2>
+<p class="mt-4 text-on-surface-variant font-body max-w-xl mx-auto" style=""><span class="" style='color: rgb(102, 102, 102); font-family: Inter, "Inter Fallback"; font-size: 18px; background-color: rgb(250, 250, 250);'>Everything you need to go from abstract idea to production-ready 3D asset in record time.</span></p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 grid-rows-none md:grid-rows-2 gap-6 h-auto">
+<!-- Advanced Text-to-3D (Large) -->
+<div class="md:col-span-8 md:row-span-1 bento-card bg-white rounded-4xl p-8 border border-slate-100 flex flex-col md:flex-row gap-8 items-center overflow-hidden">
+<div class="md:w-1/2 relative z-10">
+<div class="w-12 h-12 rounded-2xl glass-icon flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="gesture" style="">gesture</span>
+</div>
+<h3 class="font-headline text-3xl font-bold mb-4" style="">Advanced Text-to-3D</h3>
+<p class="text-on-surface-variant font-body leading-relaxed" style="">Our proprietary LLM understands spatial relationships, allowing for complex object generation from simple descriptions. Type it, see it, sculpt it.</p>
+</div>
+<div class="md:w-1/2 h-full min-h-[250px] relative group">
+<div class="absolute inset-0 bg-primary/5 rounded-3xl overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="minimalist 3D office workstation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP6Ll1YD5rjeXuCNa6Wzwd9P1lwkmH-40bKlca7NOH2EqOj9qiQ20tSYfu2Mx6PEZpKtpu5RLn9BSc1AbCPyHJK35leiHRClTntDhRRqjeqrfqLRrnMIKsTrapFMFW8cq-jcKXywiG7eawSOR0uXMuUMfrAAUuROOS9gAIPpm2Ub4QlfW8uyFxeUzlrurRH95dPi5RN7E7gBBNcspuOdKWXMX5-3OGCc2uFuciM0N3z9ew2ffEw0iZa8ucJReyhg5HFIJPk1ymRPfd" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Style Presets (Vertical Small) -->
+<div class="md:col-span-4 md:row-span-1 bento-card bg-primary rounded-4xl p-8 text-white relative overflow-hidden flex flex-col justify-between">
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="palette" style="">palette</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4" style="">Style Presets</h3>
+<p class="opacity-90 font-body text-sm leading-relaxed mb-8" style="">Swap materials instantly with professional-grade presets optimized for lighting.</p>
+</div>
+<div class="flex flex-wrap gap-2 relative z-10">
+<span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold border border-white/30" style="">Plastic</span>
+<span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold border border-white/30" style="">Clay</span>
+<span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold border border-white/30 text-white/50" style="">Glass</span>
+<span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold border border-white/30" style="">Metallic</span>
+<span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold border border-white/30" style="">Holographic</span>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Camera Controls -->
+<div class="md:col-span-4 md:row-span-1 bento-card bg-surface-container-high rounded-4xl p-8 flex flex-col justify-between border border-slate-200/50">
+<div>
+<div class="w-12 h-12 rounded-2xl glass-icon flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-slate-700 text-2xl" data-icon="videocam" style="">videocam</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2" style="">Cinematic Cameras</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed" style="">Real-time perspective shifts and FOV controls.</p>
+</div>
+<div class="mt-8 relative h-24 bg-surface rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center">
+<div class="flex gap-4 items-center">
+<div class="w-10 h-10 rounded bg-slate-200 transform rotate-12"></div>
+<div class="w-10 h-10 rounded bg-slate-300 transform -rotate-12 scale-110"></div>
+<div class="w-10 h-10 rounded bg-slate-200 transform rotate-45"></div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/50 via-transparent to-surface/50"></div>
+</div>
+</div>
+<!-- High-Res Output -->
+<div class="md:col-span-4 md:row-span-1 bento-card bg-white rounded-4xl p-8 flex flex-col justify-between border border-slate-100">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="download_2" style="">download_2</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2" style="">High-Res Exports</h3>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed" style="">Crisp 2K and 4K renders ready for any screen or engine.</p>
+</div>
+<div class="mt-8 flex items-center gap-3">
+<div class="flex-1 text-center py-3 bg-slate-50 rounded-xl border border-slate-100 text-xs font-bold text-slate-400" style="">2K PNG</div>
+<div class="flex-1 text-center py-3 bg-primary text-white rounded-xl text-xs font-bold shadow-sm" style="">4K TIFF</div>
+<div class="flex-1 text-center py-3 bg-slate-50 rounded-xl border border-slate-100 text-xs font-bold text-slate-400" style="">GLTF</div>
+</div>
+</div>
+<!-- Library Management -->
+<div class="md:col-span-4 md:row-span-1 bento-card bg-slate-900 rounded-4xl p-8 flex flex-col justify-between text-white border border-slate-800">
+<div>
+<div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-2xl" data-icon="folder_managed" style="">folder_managed</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-2" style="">Seamless Library</h3>
+<p class="text-slate-400 font-body text-sm leading-relaxed" style="">Every generation is automatically saved to your personal library, organized and ready whenever you need them.</p>
+</div>
+<div class="mt-8 flex -space-x-3 overflow-hidden">
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf5RYuv1CWOsqOyv3wodWGGlYhvHPJDvP_DzYQ50VZMP6WGJXDLODfEij0oTxDb93SyDPsCH_Hcnl4B7JbWCOeMFG_c3liUuTHdWNofCnxV6rbhSPN5bz8-W-O0Djsj9OnZaczLa6esrvF8LwT0SQhaPwaACYHJXGVWoxQOq8MHjyt3JBr2gsnpcpoJ_CXqIeD-BKH4wzAzgGsEJFAM_onBzgQlCtNFE5xtmVacGRmBOxBXcSZ9KPRw2truAHr2GprbxSwiuqEoxot" style=""/>
+<img class="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASyxqRS31XcuoDBy1fjcu7syP1_AL5Lcttu0R3DaHUT61D5qs3VwCwjb0qdQONbDvdSCKd_kBg3d4lckly6kPgEmhOehKcNPpIl3JfXW2E4bkEkVu7XV-OxKlTe7gGsux7sRyNNj53ACpB-fQFdxLCXxM9OmSz1bsVpwd2mpEfORpgiyvFKcp-kCF-YrEN2Tz0cVRs4WrUV-B_6wgK6HhfZ-pjXeiVsma0mhe9HoDHlSjbo_igm9xM0HyJFwgZRqAR6pAa9pG3AvNw" style=""/>
+<div class="flex items-center justify-center h-10 w-10 rounded-full bg-slate-800 ring-2 ring-slate-900 text-[10px] font-bold" style="">+12</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Who is it for Section -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface tracking-tight" style="">Built for the Modern Creator.</h2>
+<p class="mt-4 text-on-surface-variant font-body max-w-xl mx-auto" style="">Custom-tailored workflows for the designers of tomorrow.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Persona 1 -->
+<div class="persona-card bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full group">
+<div class="aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASyxqRS31XcuoDBy1fjcu7syP1_AL5Lcttu0R3DaHUT61D5qs3VwCwjb0qdQONbDvdSCKd_kBg3d4lckly6kPgEmhOehKcNPpIl3JfXW2E4bkEkVu7XV-OxKlTe7gGsux7sRyNNj53ACpB-fQFdxLCXxM9OmSz1bsVpwd2mpEfORpgiyvFKcp-kCF-YrEN2Tz0cVRs4WrUV-B_6wgK6HhfZ-pjXeiVsma0mhe9HoDHlSjbo_igm9xM0HyJFwgZRqAR6pAa9pG3AvNw" style=""/>
+</div>
+<div class="p-8">
+<h4 class="font-headline text-xl font-bold mb-3" style="">UI/UX Designers</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed" style="">Instantly create high-fidelity assets for mockups and production apps with zero overhead.</p>
+</div>
+</div>
+<!-- Persona 2 -->
+<div class="persona-card bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full group">
+<div class="aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf5RYuv1CWOsqOyv3wodWGGlYhvHPJDvP_DzYQ50VZMP6WGJXDLODfEij0oTxDb93SyDPsCH_Hcnl4B7JbWCOeMFG_c3liUuTHdWNofCnxV6rbhSPN5bz8-W-O0Djsj9OnZaczLa6esrvF8LwT0SQhaPwaACYHJXGVWoxQOq8MHjyt3JBr2gsnpcpoJ_CXqIeD-BKH4wzAzgGsEJFAM_onBzgQlCtNFE5xtmVacGRmBOxBXcSZ9KPRw2truAHr2GprbxSwiuqEoxot" style=""/>
+</div>
+<div class="p-8">
+<h4 class="font-headline text-xl font-bold mb-3" style="">Marketing Teams</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed" style="">Generate unique, scroll-stopping visuals for landing pages and social media campaigns.</p>
+</div>
+</div>
+<!-- Persona 3 -->
+<div class="persona-card bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full group">
+<div class="aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHXat3l70vXW0E8Qp_Tz7R-n9B_WvC_B7JvC4B-C7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4B7v-v8B7v_B7vC4" style=""/>
+</div>
+<div class="p-8">
+<h4 class="font-headline text-xl font-bold mb-3" style="">Indie Developers</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed" style="">Premium branding and in-app graphics without the overhead of a custom 3D artist.</p>
+</div>
+</div>
+<!-- Persona 4 -->
+<div class="persona-card bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full group">
+<div class="aspect-[4/3] w-full overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Ut7EbDSrWdvbniUHBY7m1gJbTpSy3Dzr3Ar_ORmRMhmshFgD1bD-uPPMnrMeJZWOlQQoh95ie_tjUOM5dL7tzmwkmmcD24Jgkj0OobLnDLmz9xQ2X3Dy7bG1sQxj4-UWIQmRpCpigEsL67t2u9xLAk0mv2wO3z-g2A3EGZ9-Q0qxYkTdrZVGA0vYQQB7zl_6Seonw2g0QJQcXgDwk1oRVJxiJ0qJR3X2H1gdDm21qlSD2CvBabSvTnqgoOFoV52OyOltl72BZhIS" style=""/>
+</div>
+<div class="p-8">
+<h4 class="font-headline text-xl font-bold mb-3" style="">Content Creators</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed" style="">Unique thumbnails, avatars, and custom branding assets that make your content pop.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8">
+<div class="max-w-5xl mx-auto bg-slate-900 rounded-4xl p-12 md:p-24 text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter" style="">Ready to build your library?</h2>
+<p class="text-slate-400 font-body text-lg mb-12 max-w-xl mx-auto" style="">Every generation is automatically saved to your personal library, organized and ready whenever you need them.</p>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-primary hover:bg-primary-container text-white px-12 py-5 rounded-full font-headline font-bold text-xl transition-all hover:shadow-[0_0_40px_rgba(73,73,255,0.4)]" style="">Start Creating Your First Icon</button>
+<button class="bg-white/10 hover:bg-white/20 text-white px-12 py-5 rounded-full font-headline font-bold text-xl backdrop-blur-md" style="">View Showcase</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-200/50 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-lg font-bold font-headline text-slate-900 dark:text-white" style="">Audora</div>
+<div class="font-body text-sm text-slate-500" style="">© 2026 Audora. All rights reserved.</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 hover:text-primary hover:translate-y-[-2px] transition-transform duration-200" href="#" style="">Privacy Policy</a>
+<a class="text-slate-500 hover:text-primary hover:translate-y-[-2px] transition-transform duration-200" href="#" style="">Terms of Service</a>
+<a class="text-slate-500 hover:text-primary hover:translate-y-[-2px] transition-transform duration-200" href="#" style="">Twitter</a>
+<a class="text-slate-500 hover:text-primary hover:translate-y-[-2px] transition-transform duration-200" href="#" style="">Discord</a>
+<a class="text-slate-500 hover:text-primary hover:translate-y-[-2px] transition-transform duration-200" href="#" style="">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Interactive elements behavior could be added here if needed for real state management
+        // but simple attribute-based swapping is handled via inline onclicks for this demo.
+    </script>
+</body></html>
