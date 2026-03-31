@@ -5,7 +5,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-export function Navbar() {
+interface NavbarProps {
+  onOpenWaitlist?: () => void;
+}
+
+export function Navbar({ onOpenWaitlist }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Prevent scrolling when mobile menu is open
@@ -30,28 +34,31 @@ export function Navbar() {
               Audora
             </Link>
             <div className="hidden md:flex items-center gap-8 font-heading font-medium text-sm tracking-tight">
-              <Link href="/pricing" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
+              {/* <Link href="/pricing" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                 Pricing
-              </Link>
+              </Link> */}
               <Link href="/about" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                 About
               </Link>
-              <Link href="/blogs" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
+              {/* <Link href="/blogs" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                 Blogs
-              </Link>
+              </Link> */}
             </div>
           </div>
-          
+
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/sign-in" className="text-slate-600 dark:text-slate-400 text-sm font-medium hover:opacity-80 transition-all duration-300">
+            {/* <Link href="/sign-in" className="text-slate-600 dark:text-slate-400 text-sm font-medium hover:opacity-80 transition-all duration-300">
               Sign In
-            </Link>
-            <button className="bg-primary hover:bg-primary-container text-white px-6 py-2.5 rounded-full text-sm font-semibold scale-95 active:scale-90 transition-transform">
-              Try for Free
+            </Link> */}
+            <button
+              onClick={onOpenWaitlist}
+              className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full text-sm font-semibold scale-95 active:scale-90 transition-all duration-200 shadow-md shadow-primary/20"
+            >
+              Join Beta
             </button>
           </div>
 
-          <button 
+          <button
             className="md:hidden p-2 text-slate-600 dark:text-slate-400 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
@@ -73,16 +80,22 @@ export function Navbar() {
           >
             <div className="flex flex-col p-6 space-y-6">
               <nav className="flex flex-col space-y-4 font-heading font-medium text-xl text-slate-900 dark:text-white">
-                <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">Pricing</Link>
+                {/* <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">Pricing</Link> */}
                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">About</Link>
-                <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">Blogs</Link>
+                {/* <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">Blogs</Link> */}
               </nav>
               <div className="flex flex-col space-y-4 pt-8 border-t border-slate-100 dark:border-slate-800">
-                <Link href="/sign-in" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-600 dark:text-slate-400 font-medium text-center hover:text-slate-900 transition-colors py-2">
+                {/* <Link href="/sign-in" onClick={() => setIsMobileMenuOpen(false)} className="text-slate-600 dark:text-slate-400 font-medium text-center hover:text-slate-900 transition-colors py-2">
                   Sign In
-                </Link>
-                <button className="bg-primary hover:bg-primary-container text-white w-full py-4 rounded-full font-semibold shadow-lg shadow-primary/20">
-                  Try for Free
+                </Link> */}
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onOpenWaitlist?.();
+                  }}
+                  className="bg-primary hover:bg-primary/90 text-white w-full py-4 rounded-full font-semibold shadow-lg shadow-primary/20"
+                >
+                  Join Beta
                 </button>
               </div>
             </div>

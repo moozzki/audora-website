@@ -1,15 +1,12 @@
-import { Navbar } from "@/components/landing/navbar";
+import { LandingLayout } from "@/components/landing/landing-layout";
 import { PricingTable } from "@/components/landing/pricing-table";
-import { Footer } from "@/components/landing/footer";
 
 export default function PricingPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-[#1A1C1C]">
-      <Navbar />
+    <LandingLayout>
       <main className="flex-1 overflow-x-hidden pt-40 pb-20">
         <PricingTable />
       </main>
-      <Footer />
-    </div>
+    </LandingLayout>
   );
 }

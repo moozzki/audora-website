@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export function Footer() {
   return (
     <>
-      <section className="py-32 px-8">
+      {/* <section className="py-32 px-8">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -32,7 +32,7 @@ export function Footer() {
             </div>
           </div>
         </motion.div>
-      </section>
+      </section> */}
 
       <footer className="w-full py-12 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
