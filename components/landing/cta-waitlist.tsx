@@ -13,7 +13,7 @@ export function CTAWaitlist() {
       <div className="absolute inset-0 bg-surface-container-lowest" />
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-lowest" />
-      
+
       {/* Glow effects */}
       <div className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px] opacity-30 pointer-events-none" />
 
@@ -26,14 +26,13 @@ export function CTAWaitlist() {
           className="flex flex-col items-center"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/10 text-on-surface border border-secondary-fixed/20 text-sm font-medium mb-8">
-            <Sparkles className="w-4 h-4 text-primary" />
-            Limited Beta Access
+            🚀 We&apos;re Launching Soon
           </div>
-          
+
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-on-surface tracking-tight mb-6">
             Ready to upgrade your design workflow?
           </h2>
-          
+
           <p className="text-lg sm:text-xl text-on-surface-variant leading-relaxed max-w-2xl mb-10">
             We are putting the final touches on Audora. Secure your spot on the beta list today and claim your 2 free credits the moment we go live.
           </p>

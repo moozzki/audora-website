@@ -10,7 +10,7 @@ interface HeroProps {
 
 export function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative min-h-[700px] flex flex-col items-center justify-center px-6 pt-24 md:pt-32 pb-10 overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center px-6 pt-0 pb-20 md:pb-32 overflow-hidden">
       <div className="max-w-4xl text-center z-10">
         <motion.span
           initial={{ opacity: 0, y: 10 }}

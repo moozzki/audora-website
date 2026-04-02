@@ -36,28 +36,28 @@ export function Footer() {
 
       <footer className="w-full py-12 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-lg font-bold font-heading text-slate-900 dark:text-white">
-            Audora
+          <div className="flex items-center">
+            <img src="/assets/logos/audora-square-logo.png" alt="Audora" className="h-8 w-auto" />
           </div>
           <div className="font-sans text-sm text-slate-500">
             © 2026 Audora. All rights reserved.
           </div>
           <div className="flex flex-wrap justify-center gap-6">
-            <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
+            {/* <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
               Privacy Policy
             </Link>
             <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
               Terms of Service
+            </Link> */}
+            <Link href="https://www.instagram.com/useaudora/" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
+              Instagram
             </Link>
-            <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
-              Twitter
-            </Link>
-            <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
+            {/* <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
               Discord
             </Link>
             <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
               Contact
-            </Link>
+            </Link> */}
           </div>
         </div>
       </footer>

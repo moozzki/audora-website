@@ -12,7 +12,7 @@ function HomeContent() {
   const { openWaitlist } = useWaitlist();
 
   return (
-    <main className="flex-1 overflow-x-hidden">
+    <main className="flex-1 overflow-x-hidden pt-40">
       <Hero onOpenWaitlist={openWaitlist} />
       <InteractiveDemo />
       <Features />

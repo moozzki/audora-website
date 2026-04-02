@@ -30,15 +30,15 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
       >
         <nav className="flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-12">
-            <Link href="/" className="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white font-heading">
-              Audora
+            <Link href="/" className="flex items-center">
+              <img src="/assets/logos/audora-square-logo.png" alt="Audora" className="h-8 w-auto" />
             </Link>
             <div className="hidden md:flex items-center gap-8 font-heading font-medium text-sm tracking-tight">
               {/* <Link href="/pricing" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                 Pricing
               </Link> */}
               <Link href="/about" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
-                About
+                Why Audora?
               </Link>
               {/* <Link href="/blogs" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                 Blogs
@@ -81,7 +81,7 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
             <div className="flex flex-col p-6 space-y-6">
               <nav className="flex flex-col space-y-4 font-heading font-medium text-xl text-slate-900 dark:text-white">
                 {/* <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">Pricing</Link> */}
-                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">About</Link>
+                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">Why Audora?</Link>
                 {/* <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-primary transition-colors">Blogs</Link> */}
               </nav>
               <div className="flex flex-col space-y-4 pt-8 border-t border-slate-100 dark:border-slate-800">

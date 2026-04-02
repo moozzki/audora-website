@@ -20,7 +20,7 @@ export function AboutContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="font-headline text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-on-surface leading-[0.95] mb-12"
+          className="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface leading-[0.95] mb-12"
         >
           Built for <span className="text-primary">Creators</span>
         </motion.h1>
@@ -52,59 +52,65 @@ export function AboutContent() {
       </section>
 
       {/* Meet the Founders Section */}
-      <section className="py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto px-8">
+      <section className="py-16 md:py-24 bg-surface-container-low">
+        <div className="max-w-[960px] mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 md:mb-16"
           >
             <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface mb-4">Meet the Founders</h2>
-            <p className="text-on-surface-variant font-body max-w-xl mx-auto">The builders behind your new favorite digital toolset.</p>
+            <p className="text-on-surface-variant font-body text-lg max-w-xl mx-auto">The builders behind your new favorite digital toolset.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="flex flex-col gap-10 md:gap-14">
             {/* Founder 1 */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="group"
+              className="bg-surface-container-highest rounded-3xl shadow-xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden flex flex-col md:flex-row w-full md:w-[92%] mr-auto"
             >
-              <div className="aspect-square rounded-2xl overflow-hidden bg-surface-container-highest mb-6 relative">
+              <div className="w-full md:w-[45%] shrink-0 border-b md:border-b-0 md:border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-100 dark:bg-slate-800/50">
                 <img
                   alt="Ridwan Fauzi"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC343dqcCPFic3hk92pARmENds7h2B_Ys7dYTzfa4MezCaa_uC-AZkXatyTL1mWqoutxDgaIEyGL61MnevQC4rYyjexBlthprBWrb7hlTHYdb5ky5fpRtz9ePldg-sT3GLjWA_APDB81NaeSW9YGcaltD6lo54onr1VowqGlqmv2SH6gZNFbJFaZ5N4umgS5LOvEhqbvAotuHbVwX36h3YQVuY7T720g-v5kUL-ZtCj3DxrLuxC0bsez_F0CefL_etpLRvdi-aEE2f3"
+                  className="w-full h-[320px] md:h-full object-cover object-top"
+                  src="./assets/ridwan-founder-audora.png"
                 />
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <h3 className="font-headline text-2xl font-bold text-on-surface">Ridwan Fauzi</h3>
-              <p className="text-primary font-bold text-sm tracking-widest uppercase mb-4">Founder</p>
-              <p className="text-on-surface-variant text-sm leading-relaxed font-body">As a product designer obsessed with clean aesthetics, I spent years building digital experiences but constantly hit the same frustrating wall. Sourcing high-quality 3D assets was always a massive bottleneck that slowed my projects down. I started Audora because I wanted to fix that exact problem. My goal is to democratize pro-level design and make stunning 3D elements instantly accessible to every creator out there.</p>
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">Founder</p>
+                <h3 className="font-headline text-3xl font-bold tracking-tight text-on-surface mb-4">Ridwan Fauzi</h3>
+                <p className="text-on-surface-variant text-base leading-relaxed font-body">
+                  As a graphics designer, finding good 3D assets was always a massive bottleneck for my projects. I started Audora to fix this exact problem and make stunning 3D elements instantly accessible for every creator.
+                </p>
+              </div>
             </motion.div>
 
             {/* Founder 2 */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="group"
+              className="bg-surface-container-highest rounded-3xl shadow-xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden flex flex-col md:flex-row w-full md:w-[92%] ml-auto"
             >
-              <div className="aspect-square rounded-2xl overflow-hidden bg-surface-container-highest mb-6 relative">
+              <div className="w-full md:w-[45%] shrink-0 border-b md:border-b-0 md:border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-100 dark:bg-slate-800/50">
                 <img
                   alt="Mochamad Rizky"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuATW-5HHjdd53kGkoJGRE5iqRNTnIX1nXfQeRfBbK3GD5ZlPBhVC619WddF1QGpN-y-5_3BmrX10zHOEOMZMDKtNQbv7GEKEpZ9PVAbNbtnazsYm2G9ap8geUy3o6fD0IsGy2oHjpF-_mt_-9z1B7v2iuKr3jaNcKv9IvGdkzJAjuQ2xqH-Q1hPZe3FafgNOBLJD4wMYI7XSY78vRLqnXtuI58ejIGC6REa1P7pDbTrUvsfk5nHijm3xFcbl20cA7xcSMczJQ03sC0F"
+                  className="w-full h-[320px] md:h-full object-cover object-top"
+                  src="./assets/rizky-cofounder-audora.png"
                 />
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <h3 className="font-headline text-2xl font-bold text-on-surface">Mochamad Rizky</h3>
-              <p className="text-primary font-bold text-sm tracking-widest uppercase mb-4">co-founder & developer</p>
-              <p className="text-on-surface-variant text-sm leading-relaxed font-body">My background is actually in web design and WordPress development. But as a huge tech geek, I couldn't ignore the massive possibilities that came with modern AI. I decided to level up my skills, diving deep into AI and context engineering to learn how to build functional SaaS platforms from scratch. Building Audora is my way of turning complex AI technology into a fast, simple, and reliable tool that helps creators work better.</p>
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">Co-Founder & Developer</p>
+                <h3 className="font-headline text-3xl font-bold tracking-tight text-on-surface mb-4">Mochamad Rizky</h3>
+                <p className="text-on-surface-variant text-base leading-relaxed font-body">
+                  Coming from a Web Designer background, I dove deep into Next.js and AI to build real solutions from scratch. Audora is my way of turning complex AI tech into a fast and simple tool for creators.
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
