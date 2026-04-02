@@ -37,7 +37,7 @@ export function Features() {
               <img
                 src="/assets/text-to-3d-generation.webp"
                 alt="Text to 3D Generation"
-                className="w-full h-48 md:h-64 object-contain"
+                className="w-full h-64 md:h-64 object-contain"
               />
             </div>
           </motion.div>
@@ -60,7 +60,7 @@ export function Features() {
               <img
                 src="/assets/one-click-style.webp"
                 alt="One Click Styles"
-                className="w-full h-48 md:h-64 object-contain"
+                className="w-full h-64 md:h-64 object-contain"
               />
             </div>
           </motion.div>
@@ -83,7 +83,7 @@ export function Features() {
               <img
                 src="/assets/easy-camera-angles.webp"
                 alt="Easy Camera Angles"
-                className="w-full h-40 md:h-48 object-contain"
+                className="w-full h-56 md:h-48 object-contain"
               />
             </div>
           </motion.div>
@@ -106,7 +106,7 @@ export function Features() {
               <img
                 src="/assets/high-quality-download.webp"
                 alt="High Resolution Downloads"
-                className="w-full h-40 md:h-48 object-contain"
+                className="w-full h-56 md:h-48 object-contain"
               />
             </div>
           </motion.div>
@@ -129,7 +129,7 @@ export function Features() {
               <img
                 src="/assets/personal-library.webp"
                 alt="Your Personal Library"
-                className="w-full h-40 md:h-48 object-contain"
+                className="w-full h-56 md:h-48 object-contain"
               />
             </div>
           </motion.div>
