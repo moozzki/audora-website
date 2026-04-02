@@ -132,7 +132,7 @@ export function Personas() {
           </div>
 
           {/* Right: Auto-playing Image Showcase */}
-          <div className="lg:col-span-5 relative group">
+          <div className="hidden lg:block lg:col-span-5 relative group">
             <div className="relative h-full bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-xl overflow-hidden flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
