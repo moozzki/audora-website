@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -37,7 +37,7 @@ export function Footer() {
       <footer className="w-full py-12 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center">
-            <img src="/assets/logos/audora-square-logo.png" alt="Audora" className="h-8 w-auto" />
+            <Image src="/assets/logos/audora-square-logo.png" alt="Audora" width={32} height={32} className="h-8 w-auto" />
           </div>
           <div className="font-sans text-sm text-slate-500">
             © 2026 Audora. All rights reserved.

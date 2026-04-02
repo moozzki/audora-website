@@ -35,7 +35,7 @@ export function AboutContent() {
             Audora started from our own frustration. Ridwan constantly hit a wall when building digital products. Finding high quality 3D icons was either too expensive or required learning complex software like Blender. The process was slow and killed creative momentum.
           </p>
           <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body">
-            To fix this, we teamed up. Combining Ridwan's product vision with Rizky's web development and AI skills, we built Audora. It is a simple platform where anyone can generate stunning 3D icons in seconds just by typing in their browser. No heavy rendering or 3D software needed, just instant assets.
+            To fix this, we teamed up. Combining Ridwan&apos;s product vision with Rizky&apos;s web development and AI skills, we built Audora. It is a simple platform where anyone can generate stunning 3D icons in seconds just by typing in their browser. No heavy rendering or 3D software needed, just instant assets.
           </p>
         </motion.div>
 

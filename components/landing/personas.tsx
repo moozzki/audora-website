@@ -37,7 +37,6 @@ export function Personas() {
   const duration = 5000; // 5 seconds per tab
 
   useEffect(() => {
-    setProgress(0);
     const startTime = Date.now();
     
     const interval = setInterval(() => {
@@ -47,6 +46,7 @@ export function Personas() {
 
       if (newProgress >= 100) {
         setActiveIndex((current) => (current + 1) % personas.length);
+        setProgress(0);
       }
     }, 50);
 
