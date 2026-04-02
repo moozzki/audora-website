@@ -19,19 +19,19 @@ export function InteractiveDemo() {
   return (
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden dark:bg-slate-950">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
           <h2 className="font-heading text-xs md:text-sm font-bold text-primary tracking-[0.2em] uppercase mb-4">Interactive Demo</h2>
-          <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface tracking-tight">One Prompt. Endless Styles.</h3>
+          <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-on-surface tracking-tight">Need a 3D icon? Just type it.</h3>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center bg-surface-container-lowest rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 border border-slate-100 dark:border-slate-800 shadow-2xl shadow-blue-500/5">
           {/* Left: Prompt Simulation */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -43,14 +43,14 @@ export function InteractiveDemo() {
                 Our neural engine interprets your creative vision instantly. Just describe it, and Audora generates a physics-accurate 3D model.
               </p>
             </div>
-            
+
             <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700" />
                 <span className="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700" />
                 <span className="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700" />
               </div>
-              
+
               <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 dark:bg-slate-800 p-3 sm:p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
                 <Search className="text-primary w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <div className="font-sans text-on-surface font-medium text-sm sm:text-base typing-effect h-6 flex items-center">
@@ -78,7 +78,7 @@ export function InteractiveDemo() {
           </motion.div>
 
           {/* Right: Style Switcher */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -88,19 +88,19 @@ export function InteractiveDemo() {
               {/* Main Image Display */}
               <div className="relative z-10 w-full h-full flex items-center justify-center">
                 <AnimatePresence mode="wait">
-                  <motion.img 
+                  <motion.img
                     key={activeStyle}
                     src={activeSrc}
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.05 }}
                     transition={{ duration: 0.4 }}
-                    className="w-full h-full object-contain style-transition" 
-                    alt={`${activeStyle} 3D style`} 
+                    className="w-full h-full object-contain style-transition"
+                    alt={`${activeStyle} 3D style`}
                   />
                 </AnimatePresence>
               </div>
-              
+
               {/* Decorative blur */}
               <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl -z-10" />
             </div>
@@ -108,21 +108,19 @@ export function InteractiveDemo() {
             {/* Style Controls */}
             <div className="mt-8 grid grid-cols-2 min-[400px]:grid-cols-4 gap-3">
               {styles.map((style) => (
-                <button 
+                <button
                   key={style.name}
                   onClick={() => setActiveStyle(style.name)}
                   className="group flex flex-col items-center gap-2"
                 >
-                  <div className={`w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden border-2 style-transition hover:scale-105 ${
-                    activeStyle === style.name 
-                      ? "border-primary ring-4 ring-primary/10" 
-                      : "border-transparent dark:border-slate-700"
-                  }`}>
+                  <div className={`w-full aspect-square bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden border-2 style-transition hover:scale-105 ${activeStyle === style.name
+                    ? "border-primary ring-4 ring-primary/10"
+                    : "border-transparent dark:border-slate-700"
+                    }`}>
                     <img className={`w-full h-full object-cover ${activeStyle === style.name ? '' : 'opacity-60'}`} src={style.src} alt={style.name} />
                   </div>
-                  <span className={`text-[10px] font-bold uppercase tracking-tighter style-transition ${
-                    activeStyle === style.name ? "text-primary" : "text-slate-400 group-hover:text-primary"
-                  }`}>
+                  <span className={`text-[10px] font-bold uppercase tracking-tighter style-transition ${activeStyle === style.name ? "text-primary" : "text-slate-400 group-hover:text-primary"
+                    }`}>
                     {style.name}
                   </span>
                 </button>
@@ -131,7 +129,7 @@ export function InteractiveDemo() {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -174,7 +172,7 @@ export function Personas() {
   return (
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-surface">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -199,13 +197,13 @@ export function Personas() {
               className="persona-card bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-3xl overflow-hidden shadow-sm flex flex-col h-full group"
             >
               <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
-                <img 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                  src={persona.src} 
+                <img
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src={persona.src}
                   alt={persona.title}
                   onError={(e) => {
-                      // Fallback if the demo image provided in HTML breaks
-                      e.currentTarget.style.display = 'none';
+                    // Fallback if the demo image provided in HTML breaks
+                    e.currentTarget.style.display = 'none';
                   }}
                 />
               </div>

@@ -7,11 +7,13 @@ const ICONS = [
   "/assets/eunha 3d.png",
   "/assets/cake 3d icon.png",
   "/assets/sushi 3d icon.png",
+  "/assets/ully 3d.png",
   "/assets/motor 3d icon.png",
   "/assets/plane 3d icon.png",
   "/assets/eunha 3d-2.png",
   "/assets/camera 3d icon.png",
   "/assets/iphone 3d icon.png",
+  "/assets/iky 3d.png",
 ];
 
 export function CarouselIcon() {

@@ -36,7 +36,7 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="font-sans text-lg text-on-surface-variant max-w-2xl mx-auto mb-12"
         >
-          Transform text prompts into high-fidelity 3D assets. Audora combines advanced neural rendering with a sleek studio workflow.
+          Audora helps designers and developers generate beautiful 3D icons instantly just by typing. Get perfect assets for your next project without the friction.
         </motion.p>
 
         {/* Primary CTA — Join Beta */}
@@ -71,7 +71,7 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
 
         {/* 3D Icons Carousel Preview */}
       </div>
-      
+
       <div className="w-full relative z-10 mt-4 md:mt-8">
         <CarouselIcon />
       </div>
