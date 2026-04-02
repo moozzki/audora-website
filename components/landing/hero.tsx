@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { CarouselIcon } from "@/components/landing/carousel-icon";
 
 interface HeroProps {
   onOpenWaitlist?: () => void;
@@ -9,7 +10,7 @@ interface HeroProps {
 
 export function Hero({ onOpenWaitlist }: HeroProps) {
   return (
-    <section className="relative min-h-[921px] flex flex-col items-center justify-center px-6 pt-32 md:pt-40 pb-20 overflow-hidden hero-gradient">
+    <section className="relative min-h-[700px] flex flex-col items-center justify-center px-6 pt-24 md:pt-32 pb-10 overflow-hidden">
       <div className="max-w-4xl text-center z-10">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
@@ -55,7 +56,7 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
           <span className="text-sm font-sans text-outline">
-            Join for free. No need credit card required.
+            No credit card required.
           </span>
         </motion.div>
 
@@ -63,30 +64,16 @@ export function Hero({ onOpenWaitlist }: HeroProps) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.45 }}
-          className="text-xs font-sans text-outline/60 mb-16"
+          className="text-xs font-sans text-outline/60 mb-8"
         >
           Join other creators waiting for early access.
         </motion.p>
 
-        {/* Preview Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto opacity-80">
-          {[
-            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbi3I0vtI3QjcKRAIkyMJr0n9JEwa_Ypv2x_jiczqzht-BHpi8fKRS3Db_tTE8njFxu2k5otWYqYGPN-CPVKfpkhJ5ZSX2tVYH7CXLm9rYGTUyK180mWClQVsrfiI68_MriHSusa28WZj-QPIKFOBScNj9Cx8mLfjChgECcbIaZCoRO0Xir_8YB_5Y-EYmubNo-NceECQAuVxUlXEwVvZsuO6T3pImjgfeUirmKgt3oo0RUrjSy7ZvnyodckzBvHLoZdh3QlD6sg1m", delay: 0.5 },
-            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuB1QNQo4HLrZD3ZHsEzXFfM9VrUr3STAXl4mA2BuNYfmb5DFhtn1SNyUPjaysNQ_vy7dqxtVw0O1zk52EBG7hdMsfp6MJNPGJGwGcf-tlOgXNfqy2dmc8EZl20jG9hTgRQ-Fmu0JxXqJXK-KjqvqhMoURGw3w0ElV1GYYkVRxXtNNXR0SNXQhrrIaZaINkdxO8q-2X7qishrxpQtSESYWu2kAaHW9aF-RXkB_ShnB04YDCw9A2L6J2PHR0OVygZkq1fS-r-ibKJnNAl", mt: true, delay: 0.6 },
-            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBHexTojLD2ygmEtEVG5JcK_m22KAAKirEo6oY3y8DQBZrTvtZX18-nu1CXbwcx9HOiWw0Nf_LtxUmBkHX_ez2ph2C4vz6EJ1v3QGZ42awBgqZPF3SbsIHvgoCbwfTu2fE0bmiMWWqF2yAqlcLEV4_k6UlwB-5z-oc_hYp013-wSJaj2dU6gAjNmwIiBE0rhskynJ5QjCh_P6zKeOo7fE8HffyfnwMwjeuC8viMiVl7yTBnrNhEgJOr6xZnQP84i__cRGGWTgabFreY", delay: 0.7 },
-            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_qy69q7ZG1YvihmEYTU-UppzgIj8lYEZEvkYJzZK77NtmUa6THxiI9aWYCQetOKjuXgyeZ6U11a-KH9CJa55sL13ClFUUiwfAgkTOPntcuw_sjSV2fvFoVqhnMTQDpAgRslrnaHqS2BnIssd81Nbsvr3hdrksigu2bl39bshwsjL8-ik99SZwIGgi_9XhUr1KmINSemtbxtT-wYHpPih7FDtgpfFly0hKFfYHb31mSOn7Z-GDtoOfkT4-B4zWS9moWBHvl2OqqwC", mt: true, delay: 0.8 }
-          ].map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: img.delay, duration: 0.8 }}
-              className={`aspect-square rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center p-4 ${img.mt ? 'md:mt-8' : ''}`}
-            >
-              <img className="w-full h-full object-contain rounded-full" src={img.src} alt="3D icon preview" />
-            </motion.div>
-          ))}
-        </div>
+        {/* 3D Icons Carousel Preview */}
+      </div>
+      
+      <div className="w-full relative z-10 mt-4 md:mt-8">
+        <CarouselIcon />
       </div>
     </section>
   );
