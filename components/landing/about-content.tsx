@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { CarouselIcon } from "@/components/landing/carousel-icon";
 
 export function AboutContent() {
   return (
@@ -31,42 +32,22 @@ export function AboutContent() {
           className="max-w-3xl mx-auto space-y-8 text-left md:text-center"
         >
           <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body">
-            Audora didn't start in a fancy boardroom; it started from our own frustration. Ridwan was constantly hitting a wall when building digital products. Finding high-quality, customizable 3D icons was either ridiculously expensive or required learning complex software like Blender. The gap between a great idea and the technical execution was just too wide. The process was slow, heavy, and killed momentum.
+            Audora started from our own frustration. Ridwan constantly hit a wall when building digital products. Finding high quality 3D icons was either too expensive or required learning complex software like Blender. The process was slow and killed creative momentum.
           </p>
           <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body">
-            We realized that to help creators move faster, we needed to eliminate the friction. That is when Rizky brought the technical side to the table. Instead of doing things the old manual way, we fully leveraged modern AI. By combining Ridwan's product vision with Rizky's context engineering and web development skills, we built Audora. It is a straightforward platform where anyone can generate stunning 3D icons in seconds just by typing, straight from their browser. No heavy rendering, no 3D software needed, just instant, usable assets powered by AI.
+            To fix this, we teamed up. Combining Ridwan's product vision with Rizky's web development and AI skills, we built Audora. It is a simple platform where anyone can generate stunning 3D icons in seconds just by typing in their browser. No heavy rendering or 3D software needed, just instant assets.
           </p>
         </motion.div>
 
         {/* Visual Accent */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-20 w-full grid grid-cols-12 gap-4 h-64 md:h-96"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="mt-20 w-full"
         >
-          <div className="col-span-8 h-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm relative group">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              alt="Abstract 3D crystalline structures floating in a minimalist white studio with soft periwinkle ambient lighting and sharp shadows"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCItT74Qeq3Zvnr_QSVZrV8LZfSzmCDxsPsxK7aMVj55tlkwFOV4RMmXDJeRdlH_m7Xdy24dtkkINU5EkGTXd94CKszU-RXZo27jJyU0EhBdqamWYSDII7p3RtFA1SjarEWKTq_VTXjFO3biml059g5_XHwpdU4ZRzxuYGmW1EqtoFsypZTBQyHCwbLw3os093jGRlinlwPYwVdaKdH1MYOnd4RkAKw2OXm4U2ziq2kO0O9rhQ_bNdpGNVIVIPeZ3yUZYjrO0esgork"
-            />
-            <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
-          </div>
-          <div className="col-span-4 h-full flex flex-col gap-4">
-            <div className="h-1/2 bg-primary-container rounded-xl overflow-hidden relative group">
-              <img
-                className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
-                alt="Fluid organic 3D shapes in vibrant signature blue and violet hues with a glossy metallic texture on a clean background"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJYtQUuaT8R2euzoN7aAT9gd4Wao5va-qkiVbwnaF8oqPgCQciTftc7glQdWFNR95W4og74edS1luRwqNGhIpSJrdqkSY0uwh-qSwvGcsBrfOVJNcqMy8ak8oiljxHub12TelnD37y4fUnwuluqCbCkg7fOfF__9Nw7Zfj55rPPV_N8nPJFoQR9BToMxVBIIUc8MOlzcYM06al_jIbbq67WZptvFSSksLVGb230IGyJyjLBAh9aAV6BsD_z_JlF3lSIoiwsgCCe_k9"
-              />
-            </div>
-            <div className="h-1/2 bg-surface-container-high rounded-xl flex items-center justify-center p-6 border border-outline-variant/10">
-              <span className="font-headline text-3xl font-bold text-on-surface opacity-40 uppercase tracking-widest text-[10px]">
-                3D-Gen
-              </span>
-            </div>
-          </div>
+          <CarouselIcon />
         </motion.div>
       </section>
 

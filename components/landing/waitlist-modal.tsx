@@ -161,7 +161,7 @@ export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
                             onChange={(e) => setEmail(e.target.value)}
                             disabled={formState === "loading"}
                             placeholder="nama@email.com"
-                            className="w-full pl-11 pr-4 py-3.5 rounded-xl border border-outline-variant/50 bg-surface-container text-on-surface placeholder:text-outline-variant text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 disabled:opacity-50"
+                            className="w-full pl-11 pr-4 py-3.5 rounded-full border border-outline-variant/50 bg-surface-container text-on-surface placeholder:text-outline-variant text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 disabled:opacity-50"
                           />
                         </div>
 
@@ -207,7 +207,7 @@ export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
                         <button
                           type="submit"
                           disabled={formState === "loading" || !turnstileToken}
-                          className="w-full py-3.5 rounded-xl bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white font-heading font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-primary/25 active:scale-[0.98]"
+                          className="w-full py-3.5 rounded-full bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white font-heading font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-primary/25 active:scale-[0.98]"
                         >
                           {formState === "loading" ? (
                             <>

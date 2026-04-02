@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Search } from "lucide-react";
 
 export function InteractiveDemo() {
@@ -26,6 +26,8 @@ export function InteractiveDemo() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const nextSlide = () => setActiveIndex((prev) => (prev + 1) % slides.length);
+
   return (
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden dark:bg-slate-950">
       <div className="max-w-[960px] mx-auto px-4">
@@ -46,7 +48,7 @@ export function InteractiveDemo() {
         {/* Slide Container */}
         <div className="relative">
           <AnimatePresence mode="wait">
-            <DemoSlide key={activeIndex} slide={slides[activeIndex]} />
+            <DemoSlide key={activeIndex} slide={slides[activeIndex]} onComplete={nextSlide} />
           </AnimatePresence>
         </div>
 
@@ -78,9 +80,15 @@ export function InteractiveDemo() {
   );
 }
 
-function DemoSlide({ slide }: { slide: { prompt: string; image: string } }) {
+function DemoSlide({ slide, onComplete }: { slide: { prompt: string; image: string }, onComplete: () => void }) {
   const [typingIndex, setTypingIndex] = useState(0);
   const [status, setStatus] = useState<'typing' | 'loading' | 'done'>('typing');
+  
+  // Create a ref for the latest onComplete to maintain a stable dependency array
+  const onCompleteRef = useRef(onComplete);
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
     // 1. Typing effect
@@ -106,7 +114,15 @@ function DemoSlide({ slide }: { slide: { prompt: string; image: string } }) {
       }, 1500); // Simulated loading time
       return () => clearTimeout(timer);
     }
-  }, [typingIndex, status, slide.prompt]);
+
+    // 3. Auto-play next slide after 5 seconds delay when done
+    if (status === 'done') {
+      const timer = setTimeout(() => {
+        onCompleteRef.current();
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [typingIndex, status, slide.prompt]); // Stable size: 3
 
   return (
     <motion.div
