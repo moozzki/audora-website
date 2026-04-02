@@ -3,7 +3,8 @@
 import { LandingLayout } from "@/components/landing/landing-layout";
 import { Hero } from "@/components/landing/hero";
 import { Features } from "@/components/landing/features";
-import { InteractiveDemo, Personas } from "@/components/landing/showcase";
+import { InteractiveDemo } from "@/components/landing/interactive-demo";
+import { Personas } from "@/components/landing/personas";
 import { useWaitlist } from "@/components/landing/waitlist-context";
 import { CTAWaitlist } from "@/components/landing/cta-waitlist";
 
