@@ -4,8 +4,7 @@ import { CTAWaitlist } from "@/components/landing/cta-waitlist";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Audora | Sculpting the Digital Future",
-  description: "Learn about the team behind Audora.",
+  title: "About",
 };
 
 export default function AboutPage() {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -14,8 +15,35 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Audora - AI-Powered 3D Icon Designer",
-  description: "Create stunning 3D icons from text using AI. Professional-grade results in seconds.",
+  title: {
+    // Default ini bakal dipakai kalau halamannya nggak punya title sendiri (misal Homepage)
+    default: "Audora - AI 3D Isometric Icon Generator | Create 3D Icons in Seconds",
+    // Template ini bakal dipakai buat halaman lain. %s itu variabel buat nama halamannya.
+    template: "%s | Audora - 3D Icon Generator",
+  },
+  description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects. Best AI-powered 3D icon generator for designers and developers.",
+  openGraph: {
+    type: "website",
+    url: "https://useaudora.com",
+    title: "Audora - AI 3D Isometric Icon Generator",
+    description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
+    siteName: "Audora",
+    // Kalau lu udah upload banner buat sosmed ke R2 lu, masukin linknya di bawah ini
+    // images: [
+    //   {
+    //     url: "https://cdn.useaudora.com/og-homepage.png", 
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Audora AI 3D Icon Generator",
+    //   },
+    // ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Audora - AI 3D Isometric Icon Generator",
+    description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
+    // images: ["https://cdn.useaudora.com/og-homepage.png"], // Uncomment kalau imagenya udah ada
+  },
 };
 
 export default function RootLayout({
@@ -39,6 +67,8 @@ export default function RootLayout({
       >
         {children}
       </body>
+
+      <GoogleAnalytics gaId="G-Z7QDG1PZ5S" />
     </html>
   );
 }
