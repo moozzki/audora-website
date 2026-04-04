@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
     siteName: "Audora",
     // Kalau lu udah upload banner buat sosmed ke R2 lu, masukin linknya di bawah ini
-    // images: [
-    //   {
-    //     url: "https://cdn.useaudora.com/og-homepage.png", 
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "Audora AI 3D Icon Generator",
-    //   },
-    // ],
+    images: [
+      {
+        url: "https://cdn.useaudora.com/assets/og-homepage.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Audora AI 3D Isometric Icon Generator",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Audora - AI 3D Isometric Icon Generator",
     description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
-    // images: ["https://cdn.useaudora.com/og-homepage.png"], // Uncomment kalau imagenya udah ada
+    images: ["https://cdn.useaudora.com/assets/og-homepage.jpg"],
   },
 };
 
