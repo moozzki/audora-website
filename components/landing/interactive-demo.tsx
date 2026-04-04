@@ -38,7 +38,7 @@ export function InteractiveDemo() {
           className="text-center mb-16"
         >
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-on-surface tracking-tight leading-tight">
-            Need an 3D icon? Just type it.
+            Need a 3D icon? Just type it.
           </h2>
           <p className="text-on-surface-variant font-sans text-lg max-w-xl mx-auto">
             See how easy it is to bring your ideas to life as perfect 3D icons with Audora.
