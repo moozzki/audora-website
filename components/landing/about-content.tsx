@@ -11,7 +11,7 @@ export function AboutContent() {
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-block px-4 py-1.5 mb-8 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-xs font-bold tracking-widest uppercase font-label"
+          className="inline-block py-1 px-3 mb-6 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-sans font-bold tracking-widest uppercase"
         >
           Our Story
         </motion.span>
@@ -71,9 +71,9 @@ export function AboutContent() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-surface-container-highest rounded-3xl shadow-xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden flex flex-col md:flex-row w-full md:w-[92%] mr-auto"
+              className="bg-surface-container-high rounded-3xl shadow-xl border border-slate-200/50 dark:border-[#2f3131] overflow-hidden flex flex-col md:flex-row w-full md:w-[92%] mr-auto"
             >
-              <div className="w-full md:w-[45%] shrink-0 border-b md:border-b-0 md:border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-100 dark:bg-slate-800/50">
+              <div className="w-full md:w-[45%] shrink-0 border-b md:border-b-0 md:border-r border-slate-200/50 dark:border-[#2f3131] bg-slate-100 dark:bg-surface">
                 <img
                   alt="Ridwan Fauzi"
                   className="w-full h-[320px] md:h-full object-cover object-top"
@@ -95,9 +95,9 @@ export function AboutContent() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-surface-container-highest rounded-3xl shadow-xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden flex flex-col md:flex-row w-full md:w-[92%] ml-auto"
+              className="bg-surface-container-high rounded-3xl shadow-xl border border-slate-200/50 dark:border-[#2f3131] overflow-hidden flex flex-col md:flex-row w-full md:w-[92%] ml-auto"
             >
-              <div className="w-full md:w-[45%] shrink-0 border-b md:border-b-0 md:border-r border-slate-200/50 dark:border-slate-800/50 bg-slate-100 dark:bg-slate-800/50">
+              <div className="w-full md:w-[45%] shrink-0 border-b md:border-b-0 md:border-r border-slate-200/50 dark:border-[#2f3131] bg-slate-100 dark:bg-surface">
                 <img
                   alt="Mochamad Rizky"
                   className="w-full h-[320px] md:h-full object-cover object-top"

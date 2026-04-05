@@ -56,21 +56,21 @@
 }
 
 .dark {
-  --primary: #c0c1ff;
+  --primary: #4949ff;
   --primary-container: #4949ff;
   --secondary: #c2c2f5;
   --secondary-container: #42436d;
   --secondary-fixed: #e1e0ff;
   --on-secondary-fixed: #16173f;
   
-  --background: #1a1c1c;
-  --surface: #1a1c1c;
-  --surface-container-lowest: #141414;
+  --background: #0d0d0d;
+  --surface: #121212;
+  --surface-container-lowest: #080808;
   --surface-container-low: #1a1c1c;
-  --surface-container: #2f3131;
-  --surface-container-high: #454556;
+  --surface-container: #222222;
+  --surface-container-high: #2f3131;
   
-  --on-surface: #f9f9f9;
+  --on-surface: #f3f3f3;
   --on-surface-variant: #c6c4d9;
   --outline: #767588;
   --outline-variant: #454556;
@@ -154,7 +154,7 @@
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
   }
   .dark .persona-card:hover {
-    border-color: #c0c1ff;
+    border-color: #4949ff;
     background: #1a1c1c;
   }
 }

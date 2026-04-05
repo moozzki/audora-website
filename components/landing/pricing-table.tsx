@@ -14,7 +14,7 @@ export function PricingTable() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-xs font-bold font-headline tracking-wider mb-8"
+          className="inline-flex items-center gap-2 py-1 px-3 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-bold font-sans tracking-widest uppercase mb-8"
         >
           <Zap className="w-4 h-4 fill-current" />
           Simple Credit-Based Pricing
@@ -123,7 +123,7 @@ export function PricingTable() {
               </li>
             ))}
           </ul>
-          <button className="w-full py-4 rounded-xl bg-surface-container-highest text-on-surface font-bold font-headline tracking-tight hover:bg-outline-variant/30 transition-all">
+          <button className="w-full py-4 rounded-xl bg-surface-container-high text-on-surface font-bold font-headline tracking-tight hover:bg-outline-variant/30 transition-all">
             Buy 10 Credits
           </button>
         </motion.div>
@@ -185,7 +185,7 @@ export function PricingTable() {
           <div className="mb-8">
             <div className="flex justify-between items-start">
               <span className="text-3xl mb-4 block">🥇</span>
-              <div className="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2 py-1 rounded font-bold">💎 BEST VALUE</div>
+              <div className="bg-primary-container text-white text-[10px] px-2 py-1 rounded font-bold">💎 BEST VALUE</div>
             </div>
             <h3 className="font-headline font-bold text-2xl mb-2">Studio</h3>
             <p className="text-on-surface-variant text-sm">Unlimited scale for teams and studios.</p>
@@ -210,7 +210,7 @@ export function PricingTable() {
               </li>
             ))}
           </ul>
-          <button className="w-full py-4 rounded-xl bg-surface-container-highest text-on-surface font-bold font-headline tracking-tight hover:bg-outline-variant/30 transition-all">
+          <button className="w-full py-4 rounded-xl bg-surface-container-high text-on-surface font-bold font-headline tracking-tight hover:bg-outline-variant/30 transition-all">
             Claim 120 Credits
           </button>
         </motion.div>
@@ -248,21 +248,21 @@ export function PricingTable() {
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
-          className="h-64 rounded-xl overflow-hidden bg-primary-fixed mt-12 md:mt-24"
+          className="h-64 rounded-xl overflow-hidden bg-primary-container/10 mt-12 md:mt-24"
         >
           <img className="w-full h-full object-cover" alt="stylized 3D light bulb" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ0PvLPjsvrkMhWt2j2ub5TiGi92SI_xJkiUxIgt4oy1H7xBmhXsfRi2b7t5QjTbtgZ2PeLifEsXyovwr9YdShmPOrliCNdGUkvmRtAhNK6Ky9fzDLLFljmX3C6vnvNiQYUq8dfDmZCEIDvAW27cyipbH8ynJafdUN2if-XHNEFp6a3aShpfaOLNK-pWnKKynKXiE_ltGkDgWqIWicK1SqXxF9i4RhF-v7w18wJwVC78a59KG9ZQwRbh7cIXji8d3gLotfVt0C_gKE" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
-          className="h-64 rounded-xl overflow-hidden bg-tertiary-fixed"
+          className="h-64 rounded-xl overflow-hidden bg-surface-container-high"
         >
           <img className="w-full h-full object-cover" alt="abstract 3D smooth organic shape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAZF43LORexr3NOyIDKVqnQsccQ9FQ-yB_vndxdo72tSpULYW-SFdZaWydyRZnjo-T8CvEgd7IRWGneJp3xKlvsZ6PNurZ3n6N3Ob6JnkBrl-dsO3AWB7R8KqtYWg-9CvYaZuWWBbTY6IYetFwGPzOZ076fSiOB-4LDWQAPCpWDZNgPzQpACPotg6eNo1D3x-uwbN5y8HPVT9WRwm35q2ilVQFdYFh4qAMlA4BTqQLbP9NCoDbyve9RqKrmkxgVcvpPxEMfkj_A_Ei" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }}
-          className="h-64 rounded-xl overflow-hidden bg-surface-container-highest mt-12 md:mt-6"
+          className="h-64 rounded-xl overflow-hidden bg-surface-container-high mt-12 md:mt-6"
         >
           <img className="w-full h-full object-cover" alt="3D rendered stylized paper plane" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHFAqnhsvpFnPQFLPMcDAFYx-OD4n8LNVuU4J02VYjPKWFZZsvet9rvJ2vz2n_PUhVvCAvPw12cCLBT5lPVACPmPbPE29Naj90pSSGhckNF-ytwm6dk9QfvCZpMN1UK0I9HJvDKtflAi5bPk7r_NfNDegA4rnzm5WKcpUL2ftIp9smH0cvfwQfK0ZjC52YXJiuMcCXBalK0yOxXHCYCtkjGzAkeebsItv5CL334vth83brGFnU9bIUsR1HSUWBucukVvxQQzLrtLug" />
         </motion.div>

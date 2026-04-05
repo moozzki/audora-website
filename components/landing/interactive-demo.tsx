@@ -29,7 +29,7 @@ export function InteractiveDemo() {
   const nextSlide = () => setActiveIndex((prev) => (prev + 1) % slides.length);
 
   return (
-    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden dark:bg-slate-950">
+    <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden dark:bg-[#121212]">
       <div className="max-w-[960px] mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ export function InteractiveDemo() {
                 }}
                 className={`h-2 rounded-full transition-colors ${i === activeIndex
                   ? "bg-primary"
-                  : "bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700"
+                  : "bg-slate-200 dark:bg-[#2f3131] hover:bg-slate-300 dark:hover:bg-[#454556]"
                   }`}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               />
@@ -133,14 +133,14 @@ function DemoSlide({ slide, onComplete }: { slide: { prompt: string; image: stri
       className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center"
     >
       {/* Left Column: Prompt Input Box */}
-      <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden shadow-blue-500/5 h-fit">
+      <div className="bg-white dark:bg-[#1a1c1c] rounded-3xl p-6 shadow-sm border border-slate-100 dark:border-[#2f3131] relative overflow-hidden shadow-blue-500/5 h-fit">
         <div className="flex items-center gap-3 mb-4">
           <span className="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700" />
           <span className="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700" />
           <span className="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700" />
         </div>
 
-        <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 dark:bg-slate-800 p-3 sm:p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+        <div className="flex items-center gap-3 sm:gap-4 bg-slate-50 dark:bg-[#222222] p-3 sm:p-4 rounded-2xl border border-slate-100 dark:border-white/5">
           <Search className="text-primary w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
           <div className="font-sans text-on-surface font-medium text-sm md:text-base h-12 flex items-center whitespace-normal overflow-hidden leading-tight">
             {slide.prompt.slice(0, typingIndex)}
@@ -152,7 +152,7 @@ function DemoSlide({ slide, onComplete }: { slide: { prompt: string; image: stri
       </div>
 
       {/* Right Column: Gen Result Image */}
-      <div className="relative aspect-square w-full bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-xl overflow-hidden flex items-center justify-center">
+      <div className="relative aspect-square w-full bg-slate-50 dark:bg-[#1a1c1c]/50 rounded-[2rem] border border-slate-100 dark:border-[#2f3131] shadow-xl overflow-hidden flex items-center justify-center">
 
         <AnimatePresence mode="wait">
           {status === 'typing' && (

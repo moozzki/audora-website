@@ -14,6 +14,8 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 export const metadata: Metadata = {
   title: {
     // Default ini bakal dipakai kalau halamannya nggak punya title sendiri (misal Homepage)
@@ -63,9 +65,16 @@ export default function RootLayout({
     >
       <body
         suppressHydrationWarning
-        className="min-h-full flex flex-col font-sans bg-[#F9F9F9] text-[#1A1C1C]"
+        className="min-h-full flex flex-col font-sans"
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
 
       <GoogleAnalytics gaId="G-Z7QDG1PZ5S" />

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface NavbarProps {
   onOpenWaitlist?: () => void;
@@ -27,7 +28,7 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm shadow-blue-500/5"
+        className="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#0d0d0d]/80 backdrop-blur-xl shadow-sm shadow-blue-500/5"
       >
         <nav className="flex justify-between items-center h-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-12">
@@ -48,6 +49,7 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
+            <ModeToggle />
             {/* <Link href="/sign-in" className="text-slate-600 dark:text-slate-400 text-sm font-medium hover:opacity-80 transition-all duration-300">
               Sign In
             </Link> */}
@@ -59,13 +61,16 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
             </button>
           </div>
 
-          <button
-            className="md:hidden p-2 text-slate-600 dark:text-slate-400 transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex md:hidden items-center gap-2">
+            <ModeToggle />
+            <button
+              className="p-2 text-slate-600 dark:text-slate-400 transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </nav>
       </motion.header>
 
@@ -77,7 +82,7 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-20 z-40 bg-white dark:bg-slate-900 md:hidden overflow-y-auto"
+            className="fixed inset-0 top-20 z-40 bg-white dark:bg-[#0d0d0d] md:hidden overflow-y-auto"
           >
             <div className="flex flex-col p-6 space-y-6">
               <nav className="flex flex-col space-y-4 font-heading font-medium text-xl text-slate-900 dark:text-white">
