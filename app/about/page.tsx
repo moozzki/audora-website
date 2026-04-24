@@ -1,4 +1,5 @@
-import { LandingLayout, AboutContent } from "@/components/landing";
+import { LandingLayout } from "@/components/landing/landing-layout";
+import { AboutContent } from "@/components/landing/about-content";
 import { CTAPrimary } from "@/components/landing/cta-primary";
 import { Metadata } from "next";
 

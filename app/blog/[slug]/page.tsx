@@ -1,6 +1,10 @@
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import { LandingLayout, BlogContent, ShareButtons, ReadingProgress, BlogCard } from "@/components/landing";
+import { LandingLayout } from "@/components/landing/landing-layout";
+import { BlogContent } from "@/components/landing/blog-content";
+import { ShareButtons } from "@/components/landing/share-buttons";
+import { ReadingProgress } from "@/components/landing/reading-progress";
+import { BlogCard } from "@/components/landing/blog-card";
 import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";

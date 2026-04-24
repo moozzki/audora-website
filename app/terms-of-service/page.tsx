@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
-import { LandingLayout, BlogContent } from "@/components/landing";
+import { LandingLayout } from "@/components/landing/landing-layout";
+import { BlogContent } from "@/components/landing/blog-content";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { StaticPage } from "@/lib/sanity.types";

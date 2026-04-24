@@ -1,5 +1,7 @@
 import { client } from "@/sanity/lib/client";
-import { LandingLayout, BlogHero, BlogList } from "@/components/landing";
+import { LandingLayout } from "@/components/landing/landing-layout";
+import { BlogHero } from "@/components/landing/blog-hero";
+import { BlogList } from "@/components/landing/blog-list";
 import type { Metadata } from "next";
 import type { Post } from "@/lib/sanity.types";
 
