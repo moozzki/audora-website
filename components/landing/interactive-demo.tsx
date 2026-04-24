@@ -8,19 +8,19 @@ export function InteractiveDemo() {
   const slides = [
     {
       prompt: "a laptop with a rocket flying out of the screen",
-      image: "./assets/laptop-rocket-icon.png"
+      image: "https://cdn.useaudora.com/assets/laptop-rocket-icon.png"
     },
     {
       prompt: "a slice of pizza wearing sunglasses",
-      image: "./assets/pizza-glasses-icon.png"
+      image: "https://cdn.useaudora.com/assets/pizza-glasses-icon.png"
     },
     {
       prompt: "a cute robot holding a cup of coffee",
-      image: "./assets/robot-coffee-icon.png"
+      image: "https://cdn.useaudora.com/assets/robot-coffee-icon.png"
     },
     {
       prompt: "an open treasure chest filled with glowing gold coins",
-      image: "./assets/treasure-icon.png"
+      image: "https://cdn.useaudora.com/assets/treasure-icon.png"
     }
   ];
 
@@ -83,7 +83,7 @@ export function InteractiveDemo() {
 function DemoSlide({ slide, onComplete }: { slide: { prompt: string; image: string }, onComplete: () => void }) {
   const [typingIndex, setTypingIndex] = useState(0);
   const [status, setStatus] = useState<'typing' | 'loading' | 'done'>('typing');
-  
+
   // Create a ref for the latest onComplete to maintain a stable dependency array
   const onCompleteRef = useRef(onComplete);
   useEffect(() => {

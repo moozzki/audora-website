@@ -10,25 +10,25 @@ export function Personas() {
       title: "UI/UX Designers",
       icon: <Palette className="w-5 h-5" />,
       description: "Stop hunting for matching icon sets. Generate the exact 3D icons you need for your web mockups and app interfaces in seconds.",
-      src: "./assets/ui-ux-designer-image.webp"
+      src: "https://cdn.useaudora.com/assets/ui-ux-designer-image.webp"
     },
     {
       title: "Marketing Teams",
       icon: <Share2 className="w-5 h-5" />,
       description: "Create fresh and eye catching 3D visuals for landing pages and social media campaigns without waiting days for a design team to deliver.",
-      src: "./assets/marketing-team-image.webp"
+      src: "https://cdn.useaudora.com/assets/marketing-team-image.webp"
     },
     {
       title: "Indie Developers",
       icon: <Rocket className="w-5 h-5" />,
       description: "Give your SaaS or mobile apps a premium look. You get top tier graphics to make your project stand out without needing to hire a dedicated 3D artist.",
-      src: "./assets/indie-developer-image.webp"
+      src: "https://cdn.useaudora.com/assets/indie-developer-image.webp"
     },
     {
       title: "Content Creators",
       icon: <PlayCircle className="w-5 h-5" />,
       description: "Make your video thumbnails and social posts stand out with custom 3D elements that you can generate instantly.",
-      src: "./assets/content-creator-image.webp"
+      src: "https://cdn.useaudora.com/assets/content-creator-image.webp"
     }
   ];
 
@@ -38,7 +38,7 @@ export function Personas() {
 
   useEffect(() => {
     const startTime = Date.now();
-    
+
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const newProgress = Math.min((elapsed / duration) * 100, 100);
@@ -82,11 +82,10 @@ export function Personas() {
                     setActiveIndex(index);
                     setProgress(0);
                   }}
-                  className={`group relative cursor-pointer rounded-2xl p-5 transition-all duration-500 overflow-hidden ${
-                    isActive 
-                      ? "bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 border border-slate-100 dark:border-slate-800" 
+                  className={`group relative cursor-pointer rounded-2xl p-5 transition-all duration-500 overflow-hidden ${isActive
+                      ? "bg-white dark:bg-slate-900 shadow-xl shadow-primary/5 border border-slate-100 dark:border-slate-800"
                       : "hover:bg-black/5 dark:hover:bg-white/5 border border-transparent opacity-60 hover:opacity-100"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-4 relative z-10">
                     <div className={`p-2 rounded-lg transition-colors duration-500 ${isActive ? "bg-primary text-white" : "bg-surface-container text-slate-400 group-hover:text-primary"}`}>
@@ -151,7 +150,7 @@ export function Personas() {
                       e.currentTarget.style.display = 'none';
                     }}
                   />
-                  
+
                   {/* Subtle Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
                 </motion.div>

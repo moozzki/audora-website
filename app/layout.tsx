@@ -19,11 +19,11 @@ import { ThemeProvider } from "@/components/theme-provider";
 export const metadata: Metadata = {
   title: {
     // Default ini bakal dipakai kalau halamannya nggak punya title sendiri (misal Homepage)
-    default: "Audora - AI 3D Isometric Icon Generator | Create 3D Icons in Seconds",
+    default: "Audora - AI 3D Isometric Icon Generator",
     // Template ini bakal dipakai buat halaman lain. %s itu variabel buat nama halamannya.
-    template: "%s | Audora - 3D Icon Generator",
+    template: "%s | Audora - AI 3D Isometric Icon Generator",
   },
-  description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects. Best AI-powered 3D icon generator for designers and developers.",
+  description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects. Best AI-powered 3D isometric icon generator for designers and developers.",
   openGraph: {
     type: "website",
     url: "https://useaudora.com",
@@ -75,9 +75,8 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-Z7QDG1PZ5S" />
       </body>
-
-      <GoogleAnalytics gaId="G-Z7QDG1PZ5S" />
     </html>
   );
 }

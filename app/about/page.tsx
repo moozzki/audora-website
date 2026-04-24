@@ -1,6 +1,5 @@
-import { LandingLayout } from "@/components/landing/landing-layout";
-import { AboutContent } from "@/components/landing/about-content";
-import { CTAWaitlist } from "@/components/landing/cta-waitlist";
+import { LandingLayout, AboutContent } from "@/components/landing";
+import { CTAPrimary } from "@/components/landing/cta-primary";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +11,7 @@ export default function AboutPage() {
     <LandingLayout>
       <main className="flex-1 overflow-x-hidden pt-40">
         <AboutContent />
-        <CTAWaitlist />
+        <CTAPrimary />
       </main>
     </LandingLayout>
   );

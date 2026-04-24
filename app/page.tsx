@@ -1,23 +1,23 @@
 "use client";
 
 import { LandingLayout } from "@/components/landing/landing-layout";
-import { Hero } from "@/components/landing/hero";
+import { HeroPrimary } from "@/components/landing/hero-primary";
 import { Features } from "@/components/landing/features";
 import { InteractiveDemo } from "@/components/landing/interactive-demo";
 import { Personas } from "@/components/landing/personas";
 import { useWaitlist } from "@/components/landing/waitlist-context";
-import { CTAWaitlist } from "@/components/landing/cta-waitlist";
+import { CTAPrimary } from "@/components/landing/cta-primary";
 
 function HomeContent() {
   const { openWaitlist } = useWaitlist();
 
   return (
     <main className="flex-1 overflow-x-hidden pt-40">
-      <Hero onOpenWaitlist={openWaitlist} />
+      <HeroPrimary />
       <InteractiveDemo />
       <Features />
       <Personas />
-      <CTAWaitlist />
+      <CTAPrimary />
     </main>
   );
 }

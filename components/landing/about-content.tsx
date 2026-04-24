@@ -77,7 +77,7 @@ export function AboutContent() {
                 <img
                   alt="Ridwan Fauzi"
                   className="w-full h-[320px] md:h-full object-cover object-top"
-                  src="./assets/ridwan-founder-audora.png"
+                  src="https://cdn.useaudora.com/assets/ridwan-founder-audora.png"
                 />
               </div>
               <div className="p-8 md:p-12 flex flex-col justify-center">
@@ -101,11 +101,11 @@ export function AboutContent() {
                 <img
                   alt="Mochamad Rizky"
                   className="w-full h-[320px] md:h-full object-cover object-top"
-                  src="./assets/rizky-cofounder-audora.png"
+                  src="https://cdn.useaudora.com/assets/rizky-cofounder-audora.png"
                 />
               </div>
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">Co-Founder & Developer</p>
+                <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">Developer</p>
                 <h3 className="font-headline text-3xl font-bold tracking-tight text-on-surface mb-4">Mochamad Rizky</h3>
                 <p className="text-on-surface-variant text-base leading-relaxed font-body">
                   Coming from a Web Designer background, I dove deep into Next.js and AI to build real solutions from scratch. Audora is my way of turning complex AI tech into a fast and simple tool for creators.

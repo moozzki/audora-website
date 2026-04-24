@@ -34,30 +34,64 @@ export function Footer() {
         </motion.div>
       </section> */}
 
-      <footer className="w-full py-12 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-[#0d0d0d]">
-        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center">
-            <Image src="/assets/logos/audora-square-logo.png" alt="Audora" width={32} height={32} className="h-8 w-auto" />
+      <footer className="w-full py-16 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-[#0d0d0d]">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col gap-12">
+          {/* Top Row: 4 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Column 1: Logo */}
+            <div className="flex flex-col gap-4">
+              <Image src="/assets/logos/audora-square-logo.png" alt="Audora" width={40} height={40} />
+            </div>
+
+            {/* Column 2: Company */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Company</h3>
+              <div className="flex flex-col gap-3">
+                <Link href="/about" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                  Why Audora
+                </Link>
+                <Link href="/pricing" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                  Pricing
+                </Link>
+                <Link href="/blog" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                  Blog
+                </Link>
+              </div>
+            </div>
+
+            {/* Column 3: Social */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Social</h3>
+              <div className="flex flex-col gap-3">
+                <Link href="https://www.instagram.com/useaudora/" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                  Instagram
+                </Link>
+                <Link href="https://www.threads.net/@useaudora" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                  Threads
+                </Link>
+              </div>
+            </div>
+
+            {/* Column 4: Legal */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Legal</h3>
+              <div className="flex flex-col gap-3">
+                <Link href="/terms-of-service" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                  Terms of Service
+                </Link>
+                <Link href="/privacy-policy" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
+
           </div>
-          <div className="font-sans text-sm text-slate-500">
-            © 2026 Audora. All rights reserved.
-          </div>
-          <div className="flex flex-wrap justify-center gap-6">
-            {/* <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
-              Terms of Service
-            </Link> */}
-            <Link href="https://www.instagram.com/useaudora/" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
-              Instagram
-            </Link>
-            {/* <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
-              Discord
-            </Link>
-            <Link href="#" className="font-sans text-sm text-slate-500 hover:text-primary hover:-translate-y-0.5 transition-transform duration-200">
-              Contact
-            </Link> */}
+
+          {/* Bottom Row */}
+          <div className="pt-8 border-t border-slate-200/50 dark:border-slate-800/50 flex justify-center items-center">
+            <div className="font-sans text-sm text-slate-500">
+              © 2026 Audora. All rights reserved.
+            </div>
           </div>
         </div>
       </footer>

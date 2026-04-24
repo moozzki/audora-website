@@ -1,21 +1,37 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { LandingLayout } from "@/components/landing/landing-layout";
-import { PricingTable } from "@/components/landing/pricing-table";
+import { PricingIDR } from "@/components/landing/pricing-idr";
+import { PricingUSD } from "@/components/landing/pricing-usd";
 
 export const metadata: Metadata = {
-  title: "Pricing | Audora",
-  // Baris ini yang ngeblokir Google biar ga nge-index halamannya
-  robots: {
-    index: false,
-    follow: false,
+  title: "Pricing",
+
+  description: "Pay as you go. No strings attached. Buy credits once and generate stunning 3D isometric icons anytime. Your credits never expire. Start creating today.",
+
+  openGraph: {
+    title: "Pricing",
+    description: "Pay as you go. No strings attached. Buy credits once and generate stunning 3D isometric icons anytime. Your credits never expire. Start creating today.",
+    url: "https://useaudora.com/pricing",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing",
+    description: "Pay as you go. No strings attached. Buy credits once and generate stunning 3D isometric icons anytime. Your credits never expire. Start creating today.",
   },
 };
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const headersList = await headers();
+  // Falls back to "ID" on localhost (header is absent in local dev)
+  const country = headersList.get("x-vercel-ip-country") ?? "ID";
+
   return (
     <LandingLayout>
       <main className="flex-1 overflow-x-hidden pt-40 pb-20">
-        <PricingTable />
+        {country === "ID" ? <PricingIDR /> : <PricingUSD />}
       </main>
     </LandingLayout>
   );

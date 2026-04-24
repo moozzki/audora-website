@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ICONS = [
-  "/assets/eunha 3d.png",
-  "/assets/cake 3d icon.png",
-  "/assets/sushi 3d icon.png",
-  "/assets/ully 3d.png",
-  "/assets/motor 3d icon.png",
-  "/assets/plane 3d icon.png",
-  "/assets/eunha 3d-2.png",
-  "/assets/camera 3d icon.png",
-  "/assets/iphone 3d icon.png",
-  "/assets/iky 3d.png",
+  "https://cdn.useaudora.com/assets/eunha%203d.png",
+  "https://cdn.useaudora.com/assets/cake%203d%20icon.png",
+  "https://cdn.useaudora.com/assets/sushi%203d%20icon.png",
+  "https://cdn.useaudora.com/assets/ully%203d.png",
+  "https://cdn.useaudora.com/assets/motor%203d%20icon.png",
+  "https://cdn.useaudora.com/assets/plane%203d%20icon.png",
+  "https://cdn.useaudora.com/assets/eunha%203d-2.png",
+  "https://cdn.useaudora.com/assets/camera%203d%20icon.png",
+  "https://cdn.useaudora.com/assets/iphone%203d%20icon.png",
+  "https://cdn.useaudora.com/assets/iky%203d.png",
 ];
 
 export function CarouselIcon() {

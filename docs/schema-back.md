@@ -66,6 +66,7 @@ export const statusEnum = pgEnum("status", ["pending", "completed", "failed"]);
 
 export const aiModelEnum = pgEnum("ai_model", ["flux-2-pro", "nano-banana-2"]);
 
+
 export const userCredits = pgTable("user_credits", {
   id: serial("id").primaryKey(),
   userId: text("user_id").notNull().unique(), // References better-auth users id
@@ -126,10 +127,5 @@ export const feedbacks = pgTable("feedbacks", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-// Type exports
-export type User = typeof user.$inferSelect;
-export type NewUser = typeof user.$inferInsert;
 export type Feedback = typeof feedbacks.$inferSelect;
 export type NewFeedback = typeof feedbacks.$inferInsert;
-export type InsertWaitlist = typeof waitlist.$inferInsert;
-export type SelectWaitlist = typeof waitlist.$inferSelect;
