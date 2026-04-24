@@ -53,9 +53,9 @@ export function Footer() {
                 <Link href="/pricing" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Pricing
                 </Link>
-                <Link href="/blog" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                {/* <Link href="/blog" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Blog
-                </Link>
+                </Link> */}
               </div>
             </div>
 

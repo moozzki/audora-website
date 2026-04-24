@@ -52,9 +52,9 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
                 <Link href="/about" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                   Why Audora?
                 </Link>
-                <Link href="/blog" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
+                {/* <Link href="/blog" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                   Blog
-                </Link>
+                </Link> */}
                 <Link href="/pricing" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                   Pricing
                 </Link>

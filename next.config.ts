@@ -1,12 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: [
-    "@portabletext/react",
-    "@portabletext/toolkit",
-    "@portabletext/types",
-    "@sanity/image-url",
-  ],
   images: {
     remotePatterns: [
       {
