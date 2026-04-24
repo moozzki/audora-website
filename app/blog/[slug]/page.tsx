@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 import type { Post } from "@/lib/sanity.types";
 
 interface PostPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 async function getPost(slug: string) {
