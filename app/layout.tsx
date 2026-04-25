@@ -15,6 +15,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { PostHogProvider } from "@/app/providers/PostHogProvider";
+import { PostHogPageView } from "@/app/providers/PostHogPageView";
 
 export const metadata: Metadata = {
   title: {
@@ -67,14 +69,17 @@ export default function RootLayout({
         suppressHydrationWarning
         className="min-h-full flex flex-col font-sans"
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <PostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <PostHogPageView />
+            {children}
+          </ThemeProvider>
+        </PostHogProvider>
         <GoogleAnalytics gaId="G-Z7QDG1PZ5S" />
       </body>
     </html>

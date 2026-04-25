@@ -66,7 +66,7 @@ export function Footer() {
                 <Link href="https://www.instagram.com/useaudora/" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Instagram
                 </Link>
-                <Link href="https://www.threads.net/@useaudora" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                <Link href="https://www.threads.com/@useaudora" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Threads
                 </Link>
               </div>
