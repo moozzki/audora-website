@@ -45,26 +45,27 @@ export function HeroPrimary() {
 
         {/* Prompt Input Bar */}
         <motion.form
-          onSubmit={redirectToSignIn}
+          onSubmit={(e) => e.preventDefault()}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="relative max-w-xl mx-auto flex items-center w-full mb-4"
         >
-          <div className="relative w-full flex items-center p-1.5 bg-surface dark:bg-[#0a0a0a] rounded-full border border-outline-variant shadow-lg shadow-primary/5 transition-all hover:shadow-xl hover:shadow-primary/10 focus-within:shadow-xl focus-within:shadow-primary/10 focus-within:border-primary/40 group">
-            <Sparkles className="absolute left-5 w-5 h-5 text-primary transition-transform group-focus-within:scale-110" />
+          <div className="relative w-full flex items-center p-1.5 bg-surface dark:bg-[#0a0a0a] rounded-full border border-outline-variant shadow-lg shadow-primary/5 transition-all group">
+            <Sparkles className="absolute left-5 w-5 h-5 text-outline transition-transform" />
             <input
               type="text"
-              placeholder="Describe your 3D icon..."
-              className="w-full bg-transparent pl-12 pr-[140px] py-3.5 outline-none text-on-surface placeholder:text-outline text-base"
+              disabled
+              placeholder="Currently in closed beta..."
+              className="w-full bg-transparent pl-12 pr-[140px] py-3.5 outline-none text-on-surface placeholder:text-outline text-base cursor-not-allowed opacity-60"
               required
             />
             <button
-              type="submit"
-              className="absolute right-1.5 inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-heading font-bold text-sm transition-all duration-300 shadow-md shadow-primary/25 hover:shadow-primary/40 active:scale-95"
+              type="button"
+              disabled
+              className="absolute right-1.5 inline-flex items-center gap-2 bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-6 py-2.5 rounded-full font-heading font-bold text-sm transition-all duration-300 cursor-not-allowed"
             >
-              Generate
-              <ArrowRight className="w-4 h-4" />
+              Closed Beta
             </button>
           </div>
         </motion.form>

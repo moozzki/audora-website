@@ -43,12 +43,10 @@ export function CTAPrimary() {
 
           <div className="flex flex-col items-center gap-4">
             <button
-              onClick={redirectToSignIn}
-              className="group relative inline-flex items-center gap-2.5 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-heading font-bold text-base transition-all duration-300 shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:scale-105 active:scale-100"
+              disabled
+              className="group relative inline-flex items-center gap-2.5 bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 cursor-not-allowed px-8 py-4 rounded-full font-heading font-bold text-base transition-all duration-300"
             >
-              <Sparkles className="w-5 h-5" />
-              Start Creating for Free
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              Closed Beta
             </button>
             <p className="text-sm text-outline font-medium">
               100% free to start. No credit card required.
