@@ -134,12 +134,19 @@ export function Navbar({ onOpenWaitlist }: NavbarProps) {
                 >
                   Why Audora?
                 </Link>
-                <Link
+                {/* <Link
                   href="/blog"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="hover:translate-x-2 transition-transform duration-300"
                 >
                   Blog
+                </Link> */}
+                <Link
+                  href="/pricing"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="hover:translate-x-2 transition-transform duration-300"
+                >
+                  Pricing
                 </Link>
               </nav>
 
