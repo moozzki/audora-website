@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, User } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 import { authClient } from "@/lib/auth-client";
 import { UserProfileDropdown } from "./user-profile-dropdown";
@@ -14,14 +14,7 @@ interface NavbarProps {
   onOpenWaitlist?: () => void;
 }
 
-const redirectToSignIn = () => {
-  const url = process.env.NODE_ENV === "development"
-    ? "http://localhost:3000/sign-in"
-    : "https://app.useaudora.com/sign-in";
-  window.location.href = url;
-};
-
-export function Navbar({ onOpenWaitlist }: NavbarProps) {
+export function Navbar({}: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { data: session, isPending } = authClient.useSession();
 

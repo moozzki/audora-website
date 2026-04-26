@@ -1,18 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { CarouselIcon } from "@/components/landing/carousel-icon";
 
 export function HeroPrimary() {
-  const redirectToSignIn = (e?: React.FormEvent) => {
-    if (e) e.preventDefault();
-    const url = process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/sign-in"
-      : "https://app.useaudora.com/sign-in";
-    window.location.href = url;
-  };
-
   return (
     <section className="relative flex flex-col items-center justify-center px-6 pt-0 pb-20 md:pb-32 overflow-hidden">
       <div className="max-w-4xl text-center z-10 w-full">

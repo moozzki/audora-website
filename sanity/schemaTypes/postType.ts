@@ -6,10 +6,15 @@ export const postType = defineType({
   title: 'Post',
   type: 'document',
   icon: DocumentTextIcon,
+  groups: [
+    { name: 'content', title: 'Content' },
+    { name: 'seo', title: 'SEO & Metadata' },
+  ],
   fields: [
     defineField({
       name: 'title',
       type: 'string',
+      group: 'content',
     }),
     defineField({
       name: 'slug',
@@ -17,11 +22,13 @@ export const postType = defineType({
       options: {
         source: 'title',
       },
+      group: 'content',
     }),
     defineField({
       name: 'author',
       type: 'reference',
       to: { type: 'author' },
+      group: 'content',
     }),
     defineField({
       name: 'mainImage',
@@ -29,6 +36,7 @@ export const postType = defineType({
       options: {
         hotspot: true,
       },
+      group: 'content',
       fields: [
         defineField({
           name: 'alt',
@@ -41,14 +49,17 @@ export const postType = defineType({
       name: 'categories',
       type: 'array',
       of: [defineArrayMember({ type: 'reference', to: { type: 'category' } })],
+      group: 'content',
     }),
     defineField({
       name: 'publishedAt',
       type: 'datetime',
+      group: 'content',
     }),
     defineField({
       name: 'body',
       type: 'blockContent',
+      group: 'content',
     }),
     defineField({
       name: 'language',
@@ -63,6 +74,13 @@ export const postType = defineType({
       },
       initialValue: 'en', // Default ke English
       validation: (Rule) => Rule.required(),
+      group: 'content',
+    }),
+    defineField({
+      name: 'seo',
+      title: 'SEO Settings',
+      type: 'seo',
+      group: 'seo',
     }),
   ],
   preview: {

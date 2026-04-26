@@ -29,7 +29,13 @@ async function getPost(slug: string) {
       "categories": categories[]->title,
       "authorName": author->name,
       "authorImage": author->image,
-      body
+      body,
+      "seo": seo {
+        focusKeyword,
+        metaTitle,
+        metaDescription,
+        "ogImageUrl": ogImage.asset->url
+      }
     }`,
     { slug }
   );
@@ -60,19 +66,21 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const description = post.body?.[0]?.children?.[0]?.text || "Read this story on Audora";
 
   return {
-    title: post.title,
-    description: description,
+    title: post.seo?.metaTitle || post.title,
+    description: post.seo?.metaDescription || description,
+    keywords: post.seo?.focusKeyword ? [post.seo.focusKeyword] : [],
     openGraph: {
-      title: `${post.title} | Audora`,
-      description: description,
-      images: post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).url()] : [],
+      title: post.seo?.metaTitle || `${post.title} | Audora`,
+      description: post.seo?.metaDescription || description,
+      images: post.seo?.ogImageUrl ? [post.seo.ogImageUrl] : (post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).url()] : []),
       type: "article",
       publishedTime: post.publishedAt,
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
-      description: description,
+      title: post.seo?.metaTitle || post.title,
+      description: post.seo?.metaDescription || description,
+      images: post.seo?.ogImageUrl || (post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).url()] : []),
     },
   };
 }

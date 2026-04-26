@@ -5,8 +5,6 @@ import { Check, ShieldCheck, Zap, Award, Gauge, CheckCircle2 } from "lucide-reac
 import { CarouselIcon } from "./carousel-icon";
 import { PricingFaq } from "./pricing-faq";
 
-const CHECKOUT_BASE = "https://app.useaudora.com/checkout";
-
 interface Package {
   emoji: string;
   name: string;
