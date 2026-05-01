@@ -1,9 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, ShieldCheck, Zap, Award, Gauge, CheckCircle2 } from "lucide-react";
+import { Check, ShieldCheck, Zap, Copyright, Gauge, CheckCircle2 } from "lucide-react";
 import { CarouselIcon } from "./carousel-icon";
 import { PricingFaq } from "./pricing-faq";
+
+const CHECKOUT_BASE = process.env.NODE_ENV === "development"
+  ? "http://localhost:3000/checkout"
+  : "https://app.useaudora.com/checkout";
 
 interface Package {
   emoji: string;
@@ -68,8 +72,8 @@ const features = [
 
 const trustSignals = [
   { icon: CheckCircle2, text: "Credits Never Expire" },
-  { icon: ShieldCheck, text: "Full Commercial License" },
-  { icon: Award, text: "30-Day Money-Back" },
+  { icon: Copyright, text: "Full Commercial License" },
+  { icon: ShieldCheck, text: "Private & Secure Storage" },
   { icon: Gauge, text: "Instant 3D Delivery" },
 ];
 
@@ -173,21 +177,12 @@ export function PricingUSD() {
                   </li>
                 ))}
               </ul>
-              {/* CTA Disabled for Closed Beta */}
-              <button
-                disabled
-                className="w-full py-4 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-bold font-headline tracking-tight cursor-not-allowed text-center block"
-              >
-                Closed Beta
-              </button>
-              {/* Original Code:
               <a
                 href={`${CHECKOUT_BASE}?package=${pkg.packageId}`}
                 className="w-full py-4 rounded-full bg-primary text-white font-bold font-headline tracking-tight hover:opacity-90 transition-all shadow-lg shadow-primary/20 text-center block"
               >
                 {pkg.ctaText}
               </a>
-              */}
             </motion.div>
           ) : (
             /* Starter & Studio — standard cards */
@@ -239,21 +234,12 @@ export function PricingUSD() {
                   </li>
                 ))}
               </ul>
-              {/* CTA Disabled for Closed Beta */}
-              <button
-                disabled
-                className="w-full py-4 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-bold font-headline tracking-tight cursor-not-allowed text-center block"
-              >
-                Closed Beta
-              </button>
-              {/* Original Code:
               <a
                 href={`${CHECKOUT_BASE}?package=${pkg.packageId}`}
                 className="w-full py-4 rounded-full bg-surface-container-high text-on-surface font-bold font-headline tracking-tight hover:bg-outline-variant/30 transition-all text-center block"
               >
                 {pkg.ctaText}
               </a>
-              */}
             </motion.div>
           )
         ))}

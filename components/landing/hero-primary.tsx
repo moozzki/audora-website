@@ -1,10 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { CarouselIcon } from "@/components/landing/carousel-icon";
 
 export function HeroPrimary() {
+  const redirectToSignIn = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const url = process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/sign-in"
+      : "https://app.useaudora.com/sign-in";
+    window.location.href = url;
+  };
+
   return (
     <section className="relative flex flex-col items-center justify-center px-6 pt-0 pb-20 md:pb-32 overflow-hidden">
       <div className="max-w-4xl text-center z-10 w-full">
@@ -14,7 +22,7 @@ export function HeroPrimary() {
           transition={{ duration: 0.5 }}
           className="inline-block py-1 px-3 mb-6 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-sans font-bold tracking-widest uppercase"
         >
-          🚀 Audora is officially live!
+          ✨ Now in Beta!
         </motion.span>
 
         <motion.h1
@@ -37,27 +45,26 @@ export function HeroPrimary() {
 
         {/* Prompt Input Bar */}
         <motion.form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={redirectToSignIn}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
           className="relative max-w-xl mx-auto flex items-center w-full mb-4"
         >
-          <div className="relative w-full flex items-center p-1.5 bg-surface dark:bg-[#0a0a0a] rounded-full border border-outline-variant shadow-lg shadow-primary/5 transition-all group">
-            <Sparkles className="absolute left-5 w-5 h-5 text-outline transition-transform" />
+          <div className="relative w-full flex items-center p-1.5 bg-surface dark:bg-[#0a0a0a] rounded-full border border-outline-variant shadow-lg shadow-primary/5 transition-all hover:shadow-xl hover:shadow-primary/10 focus-within:shadow-xl focus-within:shadow-primary/10 focus-within:border-primary/40 group">
+            <Sparkles className="absolute left-5 w-5 h-5 text-primary transition-transform group-focus-within:scale-110" />
             <input
               type="text"
-              disabled
-              placeholder="Currently in closed beta..."
-              className="w-full bg-transparent pl-12 pr-[140px] py-3.5 outline-none text-on-surface placeholder:text-outline text-base cursor-not-allowed opacity-60"
+              placeholder="Describe your 3D icon..."
+              className="w-full bg-transparent pl-12 pr-[140px] py-3.5 outline-none text-on-surface placeholder:text-outline text-base"
               required
             />
             <button
-              type="button"
-              disabled
-              className="absolute right-1.5 inline-flex items-center gap-2 bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-6 py-2.5 rounded-full font-heading font-bold text-sm transition-all duration-300 cursor-not-allowed"
+              type="submit"
+              className="absolute right-1.5 inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-heading font-bold text-sm transition-all duration-300 shadow-md shadow-primary/25 hover:shadow-primary/40 active:scale-95"
             >
-              Closed Beta
+              Generate
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </motion.form>

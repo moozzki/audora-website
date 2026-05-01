@@ -14,6 +14,13 @@ interface NavbarProps {
   onOpenWaitlist?: () => void;
 }
 
+const redirectToSignIn = () => {
+  const url = process.env.NODE_ENV === "development"
+    ? "http://localhost:3000/sign-in"
+    : "https://app.useaudora.com/sign-in";
+  window.location.href = url;
+};
+
 export function Navbar({}: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { data: session, isPending } = authClient.useSession();
@@ -61,10 +68,10 @@ export function Navbar({}: NavbarProps) {
                   <UserProfileDropdown user={session.user} />
                 ) : (
                   <button
-                    disabled
-                    className="bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 cursor-not-allowed px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200"
+                    onClick={redirectToSignIn}
+                    className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full text-sm font-semibold scale-95 active:scale-90 transition-all duration-200 shadow-md shadow-primary/20"
                   >
-                    Closed Beta
+                    Sign In
                   </button>
                 )
               )}
@@ -146,10 +153,13 @@ export function Navbar({}: NavbarProps) {
               <div className="mt-auto space-y-6 pb-10">
                 {!isPending && !session && (
                   <button
-                    disabled
-                    className="bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 cursor-not-allowed w-full py-4 rounded-3xl font-bold text-lg transition-all"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      redirectToSignIn();
+                    }}
+                    className="bg-primary hover:bg-primary/90 text-white w-full py-4 rounded-3xl font-bold text-lg shadow-lg shadow-primary/20 active:scale-[0.98] transition-all"
                   >
-                    Closed Beta
+                    Sign In to Dashboard
                   </button>
                 )}
 
