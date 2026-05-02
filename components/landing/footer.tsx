@@ -36,8 +36,8 @@ export function Footer() {
 
       <footer className="w-full py-16 border-t border-slate-200/50 dark:border-slate-800/50 bg-slate-50 dark:bg-[#0d0d0d]">
         <div className="max-w-7xl mx-auto px-8 flex flex-col gap-12">
-          {/* Top Row: 4 Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Top Row: 5 Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Column 1: Logo */}
             <div className="flex flex-col gap-4">
               <Image src="/assets/logos/audora-square-logo.png" alt="Audora" width={40} height={40} />
@@ -85,6 +85,16 @@ export function Footer() {
                 <Link href="/refund-policy" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Refund Policy
                 </Link>
+              </div>
+            </div>
+
+            {/* Column 5: Featured On */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Featured On</h3>
+              <div className="flex flex-col gap-3">
+                <a href="https://www.producthunt.com/products/audora?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-audora" target="_blank" rel="noopener noreferrer">
+                  <img alt="Audora - Premium 3D Isometric Icons & Character Generator for UI/UX | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1136642&theme=light&t=1777714356988" />
+                </a>
               </div>
             </div>
 

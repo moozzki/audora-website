@@ -6,7 +6,6 @@ import { PricingUSD } from "@/components/landing/pricing-usd";
 
 export const metadata: Metadata = {
   title: "Pricing",
-
   description: "Pay as you go. No strings attached. Buy credits once and generate stunning 3D isometric icons anytime. Your credits never expire. Start creating today.",
 
   openGraph: {
@@ -14,6 +13,14 @@ export const metadata: Metadata = {
     description: "Pay as you go. No strings attached. Buy credits once and generate stunning 3D isometric icons anytime. Your credits never expire. Start creating today.",
     url: "https://useaudora.com/pricing",
     type: "website",
+    images: [
+      {
+        url: "https://cdn.useaudora.com/assets/og-homepage.jpg?v=2",
+        width: 1200,
+        height: 630,
+        alt: "Audora - 3D Isometric Icon Generator",
+      },
+    ],
   },
 
   twitter: {
