@@ -10,7 +10,7 @@ const CHECKOUT_BASE = process.env.NODE_ENV === "development"
   : "https://app.useaudora.com/checkout";
 
 interface Package {
-  emoji: string;
+  iconUrl: string;
   name: string;
   description: string;
   credits: number;
@@ -25,7 +25,7 @@ interface Package {
 
 const packages: Package[] = [
   {
-    emoji: "🥉",
+    iconUrl: "https://cdn.useaudora.com/assets/starter-package-icon.png",
     name: "Starter",
     description: "Perfect for hobbyists and single projects.",
     credits: 25,
@@ -36,7 +36,7 @@ const packages: Package[] = [
     featured: false,
   },
   {
-    emoji: "🥈",
+    iconUrl: "https://cdn.useaudora.com/assets/creator-package-icon.png",
     name: "Creator",
     description: "Our most popular choice for professionals.",
     credits: 60,
@@ -48,7 +48,7 @@ const packages: Package[] = [
     featured: true,
   },
   {
-    emoji: "🥇",
+    iconUrl: "https://cdn.useaudora.com/assets/studio-package-icon.png",
     name: "Studio",
     description: "Unlimited scale for teams and studios.",
     credits: 175,
@@ -145,7 +145,7 @@ export function PricingUSD() {
                 🔥 MOST POPULAR
               </div>
               <div className="mb-8">
-                <span className="text-3xl mb-4 block">{pkg.emoji}</span>
+                <img src={pkg.iconUrl} alt={pkg.name} className="w-10 h-10 md:w-12 md:h-12 mb-4 object-contain" />
                 <h3 className="font-headline font-bold text-2xl mb-2">{pkg.name}</h3>
                 <p className="text-on-surface-variant text-sm">{pkg.description}</p>
               </div>
@@ -197,11 +197,11 @@ export function PricingUSD() {
               <div className="mb-8">
                 {pkg.bestValue ? (
                   <div className="flex justify-between items-start">
-                    <span className="text-3xl mb-4 block">{pkg.emoji}</span>
+                    <img src={pkg.iconUrl} alt={pkg.name} className="w-10 h-10 md:w-12 md:h-12 mb-4 object-contain" />
                     <div className="bg-primary-container text-white text-[10px] px-2 py-1 rounded font-bold">💎 BEST VALUE</div>
                   </div>
                 ) : (
-                  <span className="text-3xl mb-4 block">{pkg.emoji}</span>
+                  <img src={pkg.iconUrl} alt={pkg.name} className="w-10 h-10 md:w-12 md:h-12 mb-4 object-contain" />
                 )}
                 <h3 className="font-headline font-bold text-2xl mb-2">{pkg.name}</h3>
                 <p className="text-on-surface-variant text-sm">{pkg.description}</p>
