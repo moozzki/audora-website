@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const ICONS = [
-  "https://cdn.useaudora.com/assets/eunha%203d.png",
+  "https://cdn.useaudora.com/assets/dandy-indah.webp",
   "https://cdn.useaudora.com/assets/cake%203d%20icon.png",
   "https://cdn.useaudora.com/assets/sushi%203d%20icon.png",
   "https://cdn.useaudora.com/assets/ully%203d.png",
   "https://cdn.useaudora.com/assets/motor%203d%20icon.png",
   "https://cdn.useaudora.com/assets/plane%203d%20icon.png",
-  "https://cdn.useaudora.com/assets/eunha%203d-2.png",
+  "https://cdn.useaudora.com/assets/sapi-kambing-qurban.webp",
   "https://cdn.useaudora.com/assets/camera%203d%20icon.png",
   "https://cdn.useaudora.com/assets/iphone%203d%20icon.png",
   "https://cdn.useaudora.com/assets/iky%203d.png",
