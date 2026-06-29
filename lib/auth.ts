@@ -6,12 +6,21 @@ export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
   }),
-  baseURL: process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://app.useaudora.com",
+  baseURL: process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://useaudora.com",
+  basePath: "/api/auth",
   secret: process.env.BETTER_AUTH_SECRET,
   trustedOrigins: [
-    "https://*.useaudora.com", // allow all subdomains (landing page, app, etc.)
-    "https://useaudora.com",   // allow apex domain
-    "http://localhost:3001",   // landing page dev server
-    "http://localhost:3000",   // app dev server
+    "https://*.useaudora.com",
+    "https://useaudora.com",
+    "http://localhost:3001",
+    "http://localhost:3000",
   ],
+  // Must match the app's crossSubDomainCookies config
+  // so the landing page can read/invalidate session cookies set by app.useaudora.com
+  advanced: {
+    crossSubDomainCookies: {
+      enabled: true,
+      domain: process.env.NODE_ENV === "production" ? ".useaudora.com" : undefined,
+    },
+  },
 });
