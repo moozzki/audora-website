@@ -1,6 +1,7 @@
 "use client";
 
 import { LaptopMinimal, LogOut } from "lucide-react";
+import { authClient } from "@/lib/auth-client";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +17,6 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { authClient } from "@/lib/auth-client";
 
 interface UserProfileDropdownProps {
   user: {
