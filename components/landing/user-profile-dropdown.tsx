@@ -1,7 +1,6 @@
 "use client";
 
 import { LaptopMinimal, LogOut } from "lucide-react";
-import { authClient } from "@/lib/auth-client";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -35,13 +34,14 @@ export function UserProfileDropdown({ user }: UserProfileDropdownProps) {
     .slice(0, 2);
 
   const handleSignOut = async () => {
-    await authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          window.location.href = "/";
-        },
-      },
+    // Call the landing page's OWN /api/auth/sign-out (same-origin)
+    // instead of authClient.signOut() which would cross-origin POST
+    // to app.useaudora.com and get blocked by the reverse proxy
+    await fetch("/api/auth/sign-out", {
+      method: "POST",
+      credentials: "include",
     });
+    window.location.href = "/";
   };
 
   return (
