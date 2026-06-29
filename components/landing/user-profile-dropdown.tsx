@@ -33,15 +33,18 @@ export function UserProfileDropdown({ user }: UserProfileDropdownProps) {
     .toUpperCase()
     .slice(0, 2);
 
-  const handleSignOut = async () => {
-    // Call the landing page's OWN /api/auth/sign-out (same-origin)
-    // instead of authClient.signOut() which would cross-origin POST
-    // to app.useaudora.com and get blocked by the reverse proxy
-    await fetch("/api/auth/sign-out", {
-      method: "POST",
-      credentials: "include",
-    });
-    window.location.href = "/";
+  const handleSignOut = () => {
+    const appUrl = process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://app.useaudora.com";
+    const callbackUrl = encodeURIComponent(
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3001"
+        : "https://useaudora.com"
+    );
+    // Redirect to the dashboard's sign-out endpoint which handles session deletion
+    // server-side and redirects back here — zero CORS, correct auth instance
+    window.location.href = `${appUrl}/api/sign-out?callbackUrl=${callbackUrl}`;
   };
 
   return (
