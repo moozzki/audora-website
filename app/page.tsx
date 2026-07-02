@@ -5,6 +5,7 @@ import { HeroPrimary } from "@/components/landing/hero-primary";
 import { Features } from "@/components/landing/features";
 import { InteractiveDemo } from "@/components/landing/interactive-demo";
 import { Personas } from "@/components/landing/personas";
+import { Testimonials } from "@/components/landing/testimonials";
 import { CTAPrimary } from "@/components/landing/cta-primary";
 
 function HomeContent() {
@@ -14,6 +15,7 @@ function HomeContent() {
       <InteractiveDemo />
       <Features />
       <Personas />
+      <Testimonials />
       <CTAPrimary />
     </main>
   );

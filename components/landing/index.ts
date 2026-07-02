@@ -19,3 +19,4 @@ export * from "./blog-content";
 export * from "./share-buttons";
 export * from "./reading-progress";
 export * from "./carousel-icon";
+export * from "./testimonials";
