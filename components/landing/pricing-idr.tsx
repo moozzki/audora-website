@@ -16,7 +16,6 @@ interface Package {
   credits: number;
   price: string;
   originalPrice?: string;
-  perCredit: string;
   packageId: string;
   ctaText: string;
   featured: boolean;
@@ -30,7 +29,6 @@ const packages: Package[] = [
     description: "Perfect for hobbyists and single projects.",
     credits: 10,
     price: "Rp 30.000",
-    perCredit: "Rp 3.000 / credit",
     packageId: "starter_idr",
     ctaText: "Buy 10 Credits",
     featured: false,
@@ -42,7 +40,6 @@ const packages: Package[] = [
     credits: 30,
     price: "Rp 75.000",
     originalPrice: "Rp 90.000",
-    perCredit: "Rp 2.500 / credit",
     packageId: "creator_idr",
     ctaText: "Get 30 Credits",
     featured: true,
@@ -54,7 +51,6 @@ const packages: Package[] = [
     credits: 75,
     price: "Rp 150.000",
     originalPrice: "Rp 225.000",
-    perCredit: "Rp 2.000 / credit",
     packageId: "studio_idr",
     ctaText: "Claim 75 Credits",
     featured: false,
@@ -167,7 +163,6 @@ export function PricingIDR() {
                     </div>
                   )}
                 </div>
-                <p className="text-sm font-medium text-primary mt-1">{pkg.perCredit}</p>
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
                 {features.map((f, fi) => (
@@ -224,7 +219,6 @@ export function PricingIDR() {
                     </div>
                   )}
                 </div>
-                <p className="text-sm font-medium text-primary mt-1">{pkg.perCredit}</p>
               </div>
               <ul className="space-y-4 mb-10 flex-grow">
                 {features.map((f, fi) => (

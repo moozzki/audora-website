@@ -1,4 +1,4 @@
-import { pgTable, serial, text, integer, timestamp, pgEnum, boolean, numeric } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, integer, bigint, timestamp, pgEnum, boolean, numeric } from "drizzle-orm/pg-core";
 
 export const positionEnum = pgEnum("position", [
   "isometric", "front_facing", "back_facing", "side_facing",
@@ -94,6 +94,8 @@ export const generations = pgTable("generations", {
   resultImageUrl: text("result_image_url"),
   transparentImageUrl: text("transparent_image_url"),
   isPublic: boolean("is_public").default(false),
+  batchId: text("batch_id"),          // null for single gen; shared UUID for all items in a batch
+  seed: bigint("seed", { mode: "number" }),  // Fal.ai seed — same for all items in a batch (visual consistency)
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -133,3 +135,65 @@ export type Feedback = typeof feedbacks.$inferSelect;
 export type NewFeedback = typeof feedbacks.$inferInsert;
 export type InsertWaitlist = typeof waitlist.$inferInsert;
 export type SelectWaitlist = typeof waitlist.$inferSelect;
+
+// ---------------------------------------------------------------------------
+// Animated Icons
+// ---------------------------------------------------------------------------
+
+export const animationResolutionEnum = pgEnum("animation_resolution", ["720p", "1080p"]);
+export const animationAspectRatioEnum = pgEnum("animation_aspect_ratio", ["16:9", "9:16"]);
+
+export const animations = pgTable("animations", {
+  id: serial("id").primaryKey(),
+  userId: text("user_id").notNull(),
+  jobId: text("job_id"),
+  status: statusEnum("status").default("pending"),
+  // Source — references the static generation that was animated
+  sourceGenerationId: integer("source_generation_id"),
+  baseImageUrl: text("base_image_url"),
+  // User inputs
+  actionPrompt: text("action_prompt").notNull(),
+  resolution: animationResolutionEnum("resolution").notNull(),
+  aspectRatio: animationAspectRatioEnum("aspect_ratio").notNull().default("16:9"),
+  backgroundColor: text("background_color").notNull(),
+  // Cost
+  creditCost: integer("credit_cost").notNull(),
+  creditRefunded: boolean("credit_refunded").default(false),
+  failReason: text("fail_reason"),
+  // Result
+  resultVideoUrl: text("result_video_url"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export type Animation = typeof animations.$inferSelect;
+export type NewAnimation = typeof animations.$inferInsert;
+
+// ---------------------------------------------------------------------------
+// Custom Collections & Folder Management
+// ---------------------------------------------------------------------------
+
+export const collections = pgTable("collections", {
+  id: text("id")
+    .primaryKey()
+    .$defaultFn(() => crypto.randomUUID()),
+  userId: text("user_id").notNull(),
+  name: text("name").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+export const collectionItems = pgTable("collection_items", {
+  id: serial("id").primaryKey(),
+  collectionId: text("collection_id")
+    .references(() => collections.id, { onDelete: "cascade" })
+    .notNull(),
+  generationId: integer("generation_id")
+    .references(() => generations.id, { onDelete: "cascade" })
+    .notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export type Collection = typeof collections.$inferSelect;
+export type NewCollection = typeof collections.$inferInsert;
+export type CollectionItem = typeof collectionItems.$inferSelect;
+export type NewCollectionItem = typeof collectionItems.$inferInsert;
