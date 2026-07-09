@@ -22,7 +22,7 @@ export function HeroPrimary() {
           transition={{ duration: 0.5 }}
           className="inline-block py-1 px-3 mb-6 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-sans font-bold tracking-widest uppercase"
         >
-          ✨ Now in Beta!
+          🚀 We are officially live!
         </motion.span>
 
         <motion.h1
