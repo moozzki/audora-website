@@ -19,7 +19,7 @@
 
 ## B. Domain, Metadata & Canonical
 
-- [x] `next.config.ts` — `images.remotePatterns` tambah `cdn.zupericon.com` (pertahankan `cdn.useaudora.com`)
+- [x] `next.config.ts` — `images.remotePatterns` tambah `cdn.zupericon.com` (Fase 8: `cdn.useaudora.com` dihapus — semua aset/DB pindah ke CDN baru)
 - [x] `app/layout.tsx` — `openGraph.url` → `https://zupericon.com`
 - [x] `app/layout.tsx` — OG/Twitter image → `cdn.zupericon.com`
 - [x] `app/layout.tsx` — `metadataBase` → `NEXT_PUBLIC_SITE_URL` (fallback `https://zupericon.com`)
@@ -93,6 +93,6 @@
 3. **`app/page.tsx` diubah dari client component → server component**: diperlukan agar bisa mengekspor `metadata` (canonical `/`). Tidak ada perubahan perilaku — semua child component tetap client component.
 4. **`sanity.config.ts`**: fallback URL production diubah ke `https://zupericon.com`; nilai `NEXT_PUBLIC_SITE_URL` (di-set Fase 2) tetap dipakai lebih dulu.
 5. **`better-auth` masih ada di `package.json`** meski tidak lagi diimport di landing. Tidak dihapus agar scope Fase 4 tetap sesuai plan; bisa dibersihkan kapan saja.
-6. **`cdn.useaudora.com` tetap ada** di `images.remotePatterns` dan tetap hidup — URL lama masih dipakai aset di DB/Sanity. Aset landing sudah pindah ke `cdn.zupericon.com` dan CDN baru **sudah aktif** (12 September 2026, Fase 1 selesai).
+6. **`cdn.useaudora.com` dihapus** dari `images.remotePatterns` di Fase 8 — semua aset landing & URL DB sudah pindah ke `cdn.zupericon.com` (CDN baru aktif sejak 12 September 2026, Fase 1 selesai).
 7. **Urutan deploy**: dependency CDN **sudah beres** — `cdn.zupericon.com` aktif dan aset landing terverifikasi 200. Fase 2 (domain + env Vercel) juga **sudah selesai**, jadi deploy kode landing tinggal menunggu Fase 6. Saat ini `zupericon.com` (200) masih menyajikan build lama — canonical/aset baru akan muncul setelah deploy.
 8. **Landing di `useaudora.com` tanpa redirect**: kedua domain melayani konten yang sama; canonical + sitemap mengarah ke `zupericon.com`. Redirect 301 baru dipasang di Fase 8.

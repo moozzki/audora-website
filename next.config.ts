@@ -13,10 +13,6 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "cdn.useaudora.com",
-      },
-      {
-        protocol: "https",
         hostname: "api.dicebear.com", // 👈 Dicebear Avatar
       },
       {
