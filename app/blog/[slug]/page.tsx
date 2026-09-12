@@ -137,7 +137,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 <div className="flex items-center gap-4">
                   <div className="flex flex-col">
                     <span className="text-sm font-semibold text-slate-900 dark:text-white">
-                      {post.authorName || "Audora Team"}
+                      {post.authorName || "Zupericon Team"}
                     </span>
                     <div className="flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
                       <span className="flex items-center gap-1">
@@ -170,7 +170,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center">
-                    <div className="text-primary/20 font-bold text-4xl">AUDORA</div>
+                    <div className="text-primary/20 font-bold text-4xl">ZUPERICON</div>
                   </div>
                 )}
               </div>

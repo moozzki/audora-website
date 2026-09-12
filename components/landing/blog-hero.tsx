@@ -21,7 +21,7 @@ export function BlogHero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-heading text-5xl md:text-7xl font-bold text-on-surface tracking-tighter mb-8 leading-[1.1]"
         >
-          The Audora <span className="text-primary">Blog</span>
+          The Zupericon <span className="text-primary">Blog</span>
         </motion.h1>
 
         <motion.p

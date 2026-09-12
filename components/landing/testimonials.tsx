@@ -52,7 +52,7 @@ export function Testimonials() {
           </h2>
 
           <p className="text-on-surface-variant font-sans text-base sm:text-lg max-w-xl mx-auto">
-            Here is what people are saying about their experience creating 3D assets with Audora.
+            Here is what people are saying about their experience creating 3D assets with Zupericon.
           </p>
         </motion.div>
 

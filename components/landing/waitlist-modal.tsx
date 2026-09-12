@@ -98,7 +98,7 @@ export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
               <div className="p-8">
                 <AnimatePresence mode="wait">
                   {formState === "success" ? (
-                    // ── Success State ──
+                    // â”€â”€ Success State â”€â”€
                     <motion.div
                       key="success"
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -115,10 +115,10 @@ export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
                       </div>
                       <div>
                         <h3 className="font-heading text-2xl font-bold text-on-surface mb-2">
-                          You&apos;re on the list! 🎉
+                          You&apos;re on the list! ðŸŽ‰
                         </h3>
                         <p className="text-on-surface-variant text-sm leading-relaxed">
-                          You&apos;re in! We&apos;ll reach out the second Audora goes live. Stay tuned.
+                          You&apos;re in! We&apos;ll reach out the second Zupericon goes live. Stay tuned.
                         </p>
                       </div>
                       <p className="text-outline text-xs">
@@ -126,7 +126,7 @@ export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
                       </p>
                     </motion.div>
                   ) : (
-                    // ── Form State ──
+                    // â”€â”€ Form State â”€â”€
                     <motion.div
                       key="form"
                       initial={{ opacity: 0 }}
@@ -144,7 +144,7 @@ export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
                           Get an Early Access
                         </Dialog.Title>
                         <Dialog.Description className="text-on-surface-variant text-sm leading-relaxed">
-                          Be the first to experience Audora. Join our beta today to secure your spot and get 2 free credits for your first 3D icons when we go live.
+                          Be the first to experience Zupericon. Join our beta today to secure your spot and get 2 free credits for your first 3D icons when we go live.
                         </Dialog.Description>
                       </div>
 
@@ -180,7 +180,7 @@ export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
                           )}
                         </AnimatePresence>
 
-                        {/* Cloudflare Turnstile — managed mode */}
+                        {/* Cloudflare Turnstile â€” managed mode */}
                         <div className="flex justify-center">
                           <Turnstile
                             key={turnstileKey}

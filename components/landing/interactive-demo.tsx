@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
@@ -41,7 +41,7 @@ export function InteractiveDemo() {
             Need a 3D icon? Just type it.
           </h2>
           <p className="text-on-surface-variant font-sans text-lg max-w-xl mx-auto">
-            See how easy it is to bring your ideas to life as perfect 3D icons with Audora.
+            See how easy it is to bring your ideas to life as perfect 3D icons with Zupericon.
           </p>
         </motion.div>
 

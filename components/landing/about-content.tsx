@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { CarouselIcon } from "@/components/landing/carousel-icon";
@@ -32,10 +32,10 @@ export function AboutContent() {
           className="max-w-3xl mx-auto space-y-8 text-left md:text-center"
         >
           <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body">
-            Audora started from our own frustration. Ridwan constantly hit a wall when building digital products. Finding high quality 3D icons was either too expensive or required learning complex software like Blender. The process was slow and killed creative momentum.
+            Zupericon started from our own frustration. Ridwan constantly hit a wall when building digital products. Finding high quality 3D icons was either too expensive or required learning complex software like Blender. The process was slow and killed creative momentum.
           </p>
           <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed font-body">
-            To fix this, we teamed up. Combining Ridwan&apos;s product vision with Rizky&apos;s web development and AI skills, we built Audora. It is a simple platform where anyone can generate stunning 3D icons in seconds just by typing in their browser. No heavy rendering or 3D software needed, just instant assets.
+            To fix this, we teamed up. Combining Ridwan&apos;s product vision with Rizky&apos;s web development and AI skills, we built Zupericon. It is a simple platform where anyone can generate stunning 3D icons in seconds just by typing in their browser. No heavy rendering or 3D software needed, just instant assets.
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export function AboutContent() {
                 <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">Founder</p>
                 <h3 className="font-headline text-3xl font-bold tracking-tight text-on-surface mb-4">Ridwan Fauzi</h3>
                 <p className="text-on-surface-variant text-base leading-relaxed font-body">
-                  As a graphics designer, finding good 3D assets was always a massive bottleneck for my projects. I started Audora to fix this exact problem and make stunning 3D elements instantly accessible for every creator.
+                  As a graphics designer, finding good 3D assets was always a massive bottleneck for my projects. I started Zupericon to fix this exact problem and make stunning 3D elements instantly accessible for every creator.
                 </p>
               </div>
             </motion.div>
@@ -108,7 +108,7 @@ export function AboutContent() {
                 <p className="text-primary font-bold tracking-widest uppercase text-xs mb-3">Developer</p>
                 <h3 className="font-headline text-3xl font-bold tracking-tight text-on-surface mb-4">Mochamad Rizky</h3>
                 <p className="text-on-surface-variant text-base leading-relaxed font-body">
-                  Coming from a Web Designer background, I dove deep into Next.js and AI to build real solutions from scratch. Audora is my way of turning complex AI tech into a fast and simple tool for creators.
+                  Coming from a Web Designer background, I dove deep into Next.js and AI to build real solutions from scratch. Zupericon is my way of turning complex AI tech into a fast and simple tool for creators.
                 </p>
               </div>
             </motion.div>

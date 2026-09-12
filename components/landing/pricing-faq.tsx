@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Do I need design or 3D experience?",
-    a: "Not at all. Audora is designed with a low barrier to entry, so anyone can create professional-looking 3D assets. Just drop a reference image or type a text description of what you want, and our AI handles the complex 3D rendering.",
+    a: "Not at all. Zupericon is designed with a low barrier to entry, so anyone can create professional-looking 3D assets. Just drop a reference image or type a text description of what you want, and our AI handles the complex 3D rendering.",
   },
   {
     q: "What payment methods are accepted?",

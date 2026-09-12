@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -66,7 +66,7 @@ export function Personas() {
             Built for people who make things.
           </h2>
           <p className="text-on-surface-variant font-sans text-lg max-w-xl mx-auto">
-            We designed Audora to solve real problems and fit perfectly into your daily workflow.
+            We designed Zupericon to solve real problems and fit perfectly into your daily workflow.
           </p>
         </motion.div>
 

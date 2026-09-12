@@ -30,7 +30,7 @@ export function Features() {
             <div>
               <h3 className="font-heading text-2xl font-bold mb-3 text-slate-900 dark:text-white">Text to 3D Generation</h3>
               <p className="text-slate-600 dark:text-slate-400 font-sans text-sm md:text-base leading-relaxed">
-                Describe what you need, and Audora turns your words into detailed 3D icons instantly. You type it, we build it.
+                Describe what you need, and Zupericon turns your words into detailed 3D icons instantly. You type it, we build it.
               </p>
             </div>
             <div className="w-full flex-grow flex items-center justify-center mt-10">

@@ -35,7 +35,7 @@ export function HeroPrimary() {
           transition={{ duration: 0.5 }}
           className="inline-block py-1 px-3 mb-6 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-sans font-bold tracking-widest uppercase"
         >
-          🚀 We are officially live!
+          ðŸš€ We are officially live!
         </motion.span>
 
         <motion.h1
@@ -53,7 +53,7 @@ export function HeroPrimary() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="font-sans text-lg text-on-surface-variant max-w-2xl mx-auto mb-12"
         >
-          Audora helps designers and developers generate beautiful 3D icons instantly just by typing. Get perfect assets for your next project without the friction.
+          Zupericon helps designers and developers generate beautiful 3D icons instantly just by typing. Get perfect assets for your next project without the friction.
         </motion.p>
 
         {/* Prompt Input Bar */}
