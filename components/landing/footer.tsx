@@ -48,7 +48,7 @@ export function Footer() {
               <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Company</h3>
               <div className="flex flex-col gap-3">
                 <Link href="/about" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
-                  Why Audora
+                  Why Zupericon
                 </Link>
                 <Link href="/pricing" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Pricing
@@ -63,10 +63,10 @@ export function Footer() {
             <div className="flex flex-col gap-4">
               <h3 className="font-heading font-semibold text-slate-900 dark:text-white">Social</h3>
               <div className="flex flex-col gap-3">
-                <Link href="https://www.instagram.com/useaudora/" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                <Link href="https://www.instagram.com/zupericon/" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Instagram
                 </Link>
-                <Link href="https://www.threads.com/@useaudora" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
+                <Link href="https://www.threads.com/@zupericon" target="_blank" className="font-sans text-sm text-slate-500 hover:text-primary transition-colors duration-200 w-fit">
                   Threads
                 </Link>
               </div>
@@ -103,7 +103,7 @@ export function Footer() {
           {/* Bottom Row */}
           <div className="pt-8 border-t border-slate-200/50 dark:border-slate-800/50 flex justify-center items-center">
             <div className="font-sans text-sm text-slate-500">
-              © 2026 Audora. All rights reserved.
+              © 2026 Zupericon. All rights reserved.
             </div>
           </div>
         </div>

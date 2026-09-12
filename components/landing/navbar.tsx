@@ -47,7 +47,7 @@ export function Navbar({}: NavbarProps) {
               </Link>
               <div className="hidden md:flex items-center gap-8 font-medium text-sm tracking-tight">
                 <Link href="/about" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
-                  Why Audora?
+                  Why Zupericon?
                 </Link>
                 {/* <Link href="/blog" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
                   Blog
