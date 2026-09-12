@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight } from "lucide-react";
+import { AlertTriangle, Sparkles, ArrowRight } from "lucide-react";
 import { CarouselIcon } from "@/components/landing/carousel-icon";
 
 export function HeroPrimary() {
@@ -15,6 +15,19 @@ export function HeroPrimary() {
 
   return (
     <section className="relative flex flex-col items-center justify-center px-6 pt-0 pb-20 md:pb-32 overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        role="status"
+        className="mb-10 flex w-full max-w-3xl items-center justify-center gap-3 rounded-2xl border border-amber-300/60 bg-amber-50 px-5 py-3 text-center text-sm font-medium text-amber-900 shadow-sm dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-200"
+      >
+        <AlertTriangle className="size-5 shrink-0" aria-hidden="true" />
+        <span>
+          For Indonesian users: payments through Pakasir are temporarily under maintenance. Please try again later.
+        </span>
+      </motion.div>
+
       <div className="max-w-4xl text-center z-10 w-full">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
