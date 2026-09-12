@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     // Kalau lu udah upload banner buat sosmed ke R2 lu, masukin linknya di bawah ini
     images: [
       {
-        url: "https://cdn.zupericon.com/assets/og-homepage.jpg?v=2",
+        url: "https://cdn.zupericon.com/assets/og-homepage-v3.jpg",
         width: 1200,
         height: 630,
         alt: "Zupericon - 3D Isometric Icon Generator",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zupericon - 3D Isometric Icon Generator",
     description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
-    images: ["https://cdn.zupericon.com/assets/og-homepage.jpg?v=2"],
+    images: ["https://cdn.zupericon.com/assets/og-homepage-v3.jpg"],
   },
 };
 
