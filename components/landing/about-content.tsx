@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { CarouselIcon } from "@/components/landing/carousel-icon";
@@ -77,7 +77,7 @@ export function AboutContent() {
                 <img
                   alt="Ridwan Fauzi"
                   className="w-full h-[320px] md:h-full object-cover object-top"
-                  src="https://cdn.useaudora.com/assets/ridwan-founder-audora.png"
+                  src="https://cdn.zupericon.com/assets/ridwan-founder-audora.png"
                 />
               </div>
               <div className="p-8 md:p-12 flex flex-col justify-center">
@@ -101,7 +101,7 @@ export function AboutContent() {
                 <img
                   alt="Mochamad Rizky"
                   className="w-full h-[320px] md:h-full object-cover object-top"
-                  src="https://cdn.useaudora.com/assets/rizky-cofounder-audora.png"
+                  src="https://cdn.zupericon.com/assets/rizky-cofounder-audora.png"
                 />
               </div>
               <div className="p-8 md:p-12 flex flex-col justify-center">

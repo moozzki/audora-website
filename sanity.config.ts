@@ -21,7 +21,7 @@ interface SanityDocumentWithSlug extends SanityDocument {
 }
 
 const resolveProductionUrl = (doc: SanityDocumentWithSlug) => {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://useaudora.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zupericon.com'
   const basePath = doc.language === 'id' ? '/id/blog/' : '/blog/'
   return `${baseUrl}${basePath}${doc.slug?.current}`
 }

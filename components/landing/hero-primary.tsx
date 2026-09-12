@@ -9,7 +9,7 @@ export function HeroPrimary() {
     if (e) e.preventDefault();
     const url = process.env.NODE_ENV === "development"
       ? "http://localhost:3000/sign-in"
-      : "https://app.useaudora.com/sign-in";
+      : "https://app.zupericon.com/sign-in";
     window.location.href = url;
   };
 

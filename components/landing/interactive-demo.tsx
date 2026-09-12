@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
@@ -8,19 +8,19 @@ export function InteractiveDemo() {
   const slides = [
     {
       prompt: "a laptop with a rocket flying out of the screen",
-      image: "https://cdn.useaudora.com/assets/laptop-rocket-icon.png"
+      image: "https://cdn.zupericon.com/assets/laptop-rocket-icon.png"
     },
     {
       prompt: "a slice of pizza wearing sunglasses",
-      image: "https://cdn.useaudora.com/assets/pizza-glasses-icon.png"
+      image: "https://cdn.zupericon.com/assets/pizza-glasses-icon.png"
     },
     {
       prompt: "a cute robot holding a cup of coffee",
-      image: "https://cdn.useaudora.com/assets/robot-coffee-icon.png"
+      image: "https://cdn.zupericon.com/assets/robot-coffee-icon.png"
     },
     {
       prompt: "an open treasure chest filled with glowing gold coins",
-      image: "https://cdn.useaudora.com/assets/treasure-icon.png"
+      image: "https://cdn.zupericon.com/assets/treasure-icon.png"
     }
   ];
 

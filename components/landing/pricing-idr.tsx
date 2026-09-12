@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Check, ShieldCheck, Zap, Copyright, Gauge, CheckCircle2 } from "lucide-react";
@@ -7,7 +7,7 @@ import { PricingFaq } from "./pricing-faq";
 
 const CHECKOUT_BASE = process.env.NODE_ENV === "development"
   ? "http://localhost:3000/checkout"
-  : "https://app.useaudora.com/checkout";
+  : "https://app.zupericon.com/checkout";
 
 interface Package {
   iconUrl: string;
@@ -24,7 +24,7 @@ interface Package {
 
 const packages: Package[] = [
   {
-    iconUrl: "https://cdn.useaudora.com/assets/starter-package-icon.png",
+    iconUrl: "https://cdn.zupericon.com/assets/starter-package-icon.png",
     name: "Starter",
     description: "Perfect for hobbyists and single projects.",
     credits: 10,
@@ -34,7 +34,7 @@ const packages: Package[] = [
     featured: false,
   },
   {
-    iconUrl: "https://cdn.useaudora.com/assets/creator-package-icon.png",
+    iconUrl: "https://cdn.zupericon.com/assets/creator-package-icon.png",
     name: "Creator",
     description: "Our most popular choice for professionals.",
     credits: 30,
@@ -45,7 +45,7 @@ const packages: Package[] = [
     featured: true,
   },
   {
-    iconUrl: "https://cdn.useaudora.com/assets/studio-package-icon.png",
+    iconUrl: "https://cdn.zupericon.com/assets/studio-package-icon.png",
     name: "Studio",
     description: "Unlimited scale for teams and studios.",
     credits: 75,
@@ -128,7 +128,7 @@ export function PricingIDR() {
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch lg:items-end mb-24 cursor-default">
         {packages.map((pkg, i) => (
           pkg.featured ? (
-            /* Creator — featured card */
+            /* Creator â€” featured card */
             <motion.div
               key={pkg.packageId}
               initial={{ opacity: 0, y: 30 }}
@@ -138,7 +138,7 @@ export function PricingIDR() {
               className="p-8 lg:p-10 rounded-2xl bg-surface-container-lowest shadow-[0_12px_40px_rgba(26,28,28,0.06)] flex flex-col h-full relative mt-4 md:mt-0 border-t-4 border-primary-container z-10 lg:scale-105"
             >
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-white px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
-                🔥 MOST POPULAR
+                ðŸ”¥ MOST POPULAR
               </div>
               <div className="mb-8">
                 <img src={pkg.iconUrl} alt={pkg.name} className="w-10 h-10 md:w-12 md:h-12 mb-4 object-contain" />
@@ -180,7 +180,7 @@ export function PricingIDR() {
               </a>
             </motion.div>
           ) : (
-            /* Starter & Studio — standard cards */
+            /* Starter & Studio â€” standard cards */
             <motion.div
               key={pkg.packageId}
               initial={{ opacity: 0, y: 30 }}
@@ -193,7 +193,7 @@ export function PricingIDR() {
                 {pkg.bestValue ? (
                   <div className="flex justify-between items-start">
                     <img src={pkg.iconUrl} alt={pkg.name} className="w-10 h-10 md:w-12 md:h-12 mb-4 object-contain" />
-                    <div className="bg-primary-container text-white text-[10px] px-2 py-1 rounded font-bold">💎 BEST VALUE</div>
+                    <div className="bg-primary-container text-white text-[10px] px-2 py-1 rounded font-bold">ðŸ’Ž BEST VALUE</div>
                   </div>
                 ) : (
                   <img src={pkg.iconUrl} alt={pkg.name} className="w-10 h-10 md:w-12 md:h-12 mb-4 object-contain" />
@@ -250,7 +250,7 @@ export function PricingIDR() {
         <div className="bg-surface-container-lowest p-8 rounded-xl flex flex-col md:flex-row items-center justify-between gap-8 border border-outline-variant/10">
           <div className="flex flex-col gap-1 items-center md:items-start text-center md:text-left">
             <p className="text-sm font-bold text-on-surface tracking-tight">Accepted Payment Methods</p>
-            <p className="text-xs text-on-surface-variant">🔒 Secure checkout powered by Pakasir.</p>
+            <p className="text-xs text-on-surface-variant">ðŸ”’ Secure checkout powered by Pakasir.</p>
           </div>
           <div className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6 opacity-60 hover:opacity-100 transition-opacity">
             {paymentMethods.map((method) => (

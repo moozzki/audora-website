@@ -8,11 +8,14 @@ import type { Post } from "@/lib/sanity.types";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Read the latest news, guides, and updates from the Audora team.",
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
     // WAJIB ditulis manual karena OG nggak minjem template dari layout utama
     title: "Blog | Audora - AI 3D Isometric Icon Generator",
     description: "Read the latest news, guides, and updates from the Audora team.",
-    url: "https://useaudora.com/blog",
+    url: "https://zupericon.com/blog",
     type: "website",
   },
   twitter: {

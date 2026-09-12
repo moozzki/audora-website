@@ -1,4 +1,4 @@
-import { client } from "@/sanity/lib/client";
+﻿import { client } from "@/sanity/lib/client";
 import { LandingLayout } from "@/components/landing/landing-layout";
 import { BlogContent } from "@/components/landing/blog-content";
 import type { Metadata } from "next";
@@ -27,6 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: page.title,
     description: `Read the ${page.title} for Audora.`,
+    alternates: {
+      canonical: "/terms-of-service",
+    },
   };
 }
 
@@ -61,7 +64,7 @@ export default async function TermsOfServicePage() {
           </div>
 
           <footer className="mt-16 text-center text-slate-400 dark:text-slate-500 text-sm italic font-sans animate-in fade-in duration-1000 delay-500">
-            Questions regarding our terms? Reach out to <a href="mailto:support@useaudora.com" className="text-primary hover:underline underline-offset-4">support@useaudora.com</a>
+            Questions regarding our terms? Reach out to <a href="mailto:support@zupericon.com" className="text-primary hover:underline underline-offset-4">support@zupericon.com</a>
           </footer>
         </div>
       </main>

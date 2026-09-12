@@ -69,6 +69,9 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     title: post.seo?.metaTitle || post.title,
     description: post.seo?.metaDescription || description,
     keywords: post.seo?.focusKeyword ? [post.seo.focusKeyword] : [],
+    alternates: {
+      canonical: `/blog/${post.slug.current}`,
+    },
     openGraph: {
       title: post.seo?.metaTitle || `${post.title} | Audora`,
       description: post.seo?.metaDescription || description,
@@ -94,7 +97,7 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const relatedPosts = await getRelatedPosts(slug, post.categories);
-  const currentUrl = `https://useaudora.com/blog/${post.slug.current}`;
+  const currentUrl = `https://zupericon.com/blog/${post.slug.current}`;
 
   return (
     <LandingLayout>

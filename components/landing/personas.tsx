@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -10,25 +10,25 @@ export function Personas() {
       title: "UI/UX Designers",
       icon: <Palette className="w-5 h-5" />,
       description: "Stop hunting for matching icon sets. Generate the exact 3D icons you need for your web mockups and app interfaces in seconds.",
-      src: "https://cdn.useaudora.com/assets/ui-ux-designer-image.webp"
+      src: "https://cdn.zupericon.com/assets/ui-ux-designer-image.webp"
     },
     {
       title: "Marketing Teams",
       icon: <Share2 className="w-5 h-5" />,
       description: "Create fresh and eye catching 3D visuals for landing pages and social media campaigns without waiting days for a design team to deliver.",
-      src: "https://cdn.useaudora.com/assets/marketing-team-image.webp"
+      src: "https://cdn.zupericon.com/assets/marketing-team-image.webp"
     },
     {
       title: "Indie Developers",
       icon: <Rocket className="w-5 h-5" />,
       description: "Give your SaaS or mobile apps a premium look. You get top tier graphics to make your project stand out without needing to hire a dedicated 3D artist.",
-      src: "https://cdn.useaudora.com/assets/indie-developer-image.webp"
+      src: "https://cdn.zupericon.com/assets/indie-developer-image.webp"
     },
     {
       title: "Content Creators",
       icon: <PlayCircle className="w-5 h-5" />,
       description: "Make your video thumbnails and social posts stand out with custom 3D elements that you can generate instantly.",
-      src: "https://cdn.useaudora.com/assets/content-creator-image.webp"
+      src: "https://cdn.zupericon.com/assets/content-creator-image.webp"
     }
   ];
 

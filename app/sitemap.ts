@@ -1,10 +1,10 @@
-// app/sitemap.ts
+﻿// app/sitemap.ts
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: 'https://useaudora.com',
+            url: 'https://zupericon.com',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 1, // Prioritas tertinggi buat landing page
@@ -12,19 +12,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         // Kalau lu nambahin halaman lain nanti (misal blog atau pricing), 
         // tinggal tambahin object baru di dalam array ini:
         {
-            url: 'https://useaudora.com/about',
+            url: 'https://zupericon.com/about',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.6,
         },
         {
-            url: 'https://useaudora.com/pricing',
+            url: 'https://zupericon.com/pricing',
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.9,
         },
         {
-            url: 'https://useaudora.com/blog',
+            url: 'https://zupericon.com/blog',
             lastModified: new Date(),
             changeFrequency: 'daily',
             priority: 0.8,

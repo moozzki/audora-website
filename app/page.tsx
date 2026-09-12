@@ -1,5 +1,3 @@
-"use client";
-
 import { LandingLayout } from "@/components/landing/landing-layout";
 import { HeroPrimary } from "@/components/landing/hero-primary";
 import { Features } from "@/components/landing/features";
@@ -7,6 +5,13 @@ import { InteractiveDemo } from "@/components/landing/interactive-demo";
 import { Personas } from "@/components/landing/personas";
 import { Testimonials } from "@/components/landing/testimonials";
 import { CTAPrimary } from "@/components/landing/cta-primary";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 function HomeContent() {
   return (

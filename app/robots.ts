@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
             // disallow: '/admin/', 
         },
         // Pastikan URL-nya ngarah ke domain utama lu
-        sitemap: 'https://useaudora.com/sitemap.xml',
+        sitemap: 'https://zupericon.com/sitemap.xml',
     };
 }

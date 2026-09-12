@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cdn.zupericon.com",
+      },
+      {
+        protocol: "https",
         hostname: "cdn.useaudora.com",
       },
       {
@@ -38,10 +42,6 @@ const nextConfig: NextConfig = {
       {
         source: "/ingest/decide",
         destination: "https://us.i.posthog.com/decide",
-      },
-      {
-        source: "/api/auth/:path*",
-        destination: "http://localhost:3000/api/auth/:path*",
       },
     ];
   },

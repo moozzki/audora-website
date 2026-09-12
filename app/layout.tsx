@@ -19,6 +19,7 @@ import { PostHogProvider } from "@/app/providers/PostHogProvider";
 import { PostHogPageView } from "@/app/providers/PostHogPageView";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://zupericon.com"),
   title: {
     // Default ini bakal dipakai kalau halamannya nggak punya title sendiri (misal Homepage)
     default: "Audora - 3D Isometric Icon Generator",
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
   description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects. Best AI-powered 3D isometric icon generator for designers and developers.",
   openGraph: {
     type: "website",
-    url: "https://useaudora.com",
+    url: "https://zupericon.com",
     title: "Audora - 3D Isometric Icon Generator",
     description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
     siteName: "Audora",
     // Kalau lu udah upload banner buat sosmed ke R2 lu, masukin linknya di bawah ini
     images: [
       {
-        url: "https://cdn.useaudora.com/assets/og-homepage.jpg?v=2",
+        url: "https://cdn.zupericon.com/assets/og-homepage.jpg?v=2",
         width: 1200,
         height: 630,
         alt: "Audora - 3D Isometric Icon Generator",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Audora - 3D Isometric Icon Generator",
     description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
-    images: ["https://cdn.useaudora.com/assets/og-homepage.jpg?v=2"],
+    images: ["https://cdn.zupericon.com/assets/og-homepage.jpg?v=2"],
   },
 };
 
