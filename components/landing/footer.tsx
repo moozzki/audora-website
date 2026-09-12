@@ -40,7 +40,7 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {/* Column 1: Logo */}
             <div className="flex flex-col gap-4">
-              <Image src="/assets/logos/audora-square-logo.png" alt="Audora" width={40} height={40} />
+              <Image src="/assets/logos/zupericon-logo.square.webp" alt="Zupericon" width={40} height={40} />
             </div>
 
             {/* Column 2: Company */}

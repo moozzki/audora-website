@@ -22,30 +22,30 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://zupericon.com"),
   title: {
     // Default ini bakal dipakai kalau halamannya nggak punya title sendiri (misal Homepage)
-    default: "Audora - 3D Isometric Icon Generator",
+    default: "Zupericon - 3D Isometric Icon Generator",
     // Template ini bakal dipakai buat halaman lain. %s itu variabel buat nama halamannya.
-    template: "%s | Audora - 3D Isometric Icon Generator",
+    template: "%s | Zupericon - 3D Isometric Icon Generator",
   },
   description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects. Best AI-powered 3D isometric icon generator for designers and developers.",
   openGraph: {
     type: "website",
     url: "https://zupericon.com",
-    title: "Audora - 3D Isometric Icon Generator",
+    title: "Zupericon - 3D Isometric Icon Generator",
     description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
-    siteName: "Audora",
+    siteName: "Zupericon",
     // Kalau lu udah upload banner buat sosmed ke R2 lu, masukin linknya di bawah ini
     images: [
       {
         url: "https://cdn.zupericon.com/assets/og-homepage.jpg?v=2",
         width: 1200,
         height: 630,
-        alt: "Audora - 3D Isometric Icon Generator",
+        alt: "Zupericon - 3D Isometric Icon Generator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audora - 3D Isometric Icon Generator",
+    title: "Zupericon - 3D Isometric Icon Generator",
     description: "Generate high-quality 3D isometric icons in seconds for your landing pages, apps, and Figma projects.",
     images: ["https://cdn.zupericon.com/assets/og-homepage.jpg?v=2"],
   },

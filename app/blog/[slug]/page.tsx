@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   const post = await getPost(slug);
   if (!post) return {};
 
-  const description = post.body?.[0]?.children?.[0]?.text || "Read this story on Audora";
+  const description = post.body?.[0]?.children?.[0]?.text || "Read this story on Zupericon";
 
   return {
     title: post.seo?.metaTitle || post.title,
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       canonical: `/blog/${post.slug.current}`,
     },
     openGraph: {
-      title: post.seo?.metaTitle || `${post.title} | Audora`,
+      title: post.seo?.metaTitle || `${post.title} | Zupericon`,
       description: post.seo?.metaDescription || description,
       images: post.seo?.ogImageUrl ? [post.seo.ogImageUrl] : (post.mainImage ? [urlFor(post.mainImage).width(1200).height(630).url()] : []),
       type: "article",

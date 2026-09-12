@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "https://cdn.zupericon.com/assets/og-homepage.jpg?v=2",
         width: 1200,
         height: 630,
-        alt: "Audora - 3D Isometric Icon Generator",
+        alt: "Zupericon - 3D Isometric Icon Generator",
       },
     ],
   },

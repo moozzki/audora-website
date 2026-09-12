@@ -43,7 +43,7 @@ export function Navbar({}: NavbarProps) {
           <div className="hidden md:flex items-center justify-between w-full">
             <div className="flex items-center gap-12">
               <Link href="/" className="flex items-center">
-                <Image src="/assets/logos/audora-square-logo.png" alt="Audora" width={32} height={32} />
+                <Image src="/assets/logos/zupericon-logo.square.webp" alt="Zupericon" width={32} height={32} />
               </Link>
               <div className="hidden md:flex items-center gap-8 font-medium text-sm tracking-tight">
                 <Link href="/about" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 hover:opacity-80 transition-all duration-300">
@@ -73,7 +73,7 @@ export function Navbar({}: NavbarProps) {
           <div className="flex md:hidden items-center justify-between w-full gap-4">
             {/* Left: Logo */}
             <Link href="/" className="flex items-center shrink-0">
-              <Image src="/assets/logos/audora-square-logo.png" alt="Audora" width={28} height={28} />
+              <Image src="/assets/logos/zupericon-logo.square.webp" alt="Zupericon" width={28} height={28} />
             </Link>
 
             {/* Menu Button */}
@@ -110,7 +110,7 @@ export function Navbar({}: NavbarProps) {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="hover:translate-x-2 transition-transform duration-300"
                 >
-                  Why Audora?
+                  Why Zupericon?
                 </Link>
                 {/* <Link
                   href="/blog"

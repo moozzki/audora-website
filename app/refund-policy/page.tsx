@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: page.title,
-    description: `Read the ${page.title} for Audora.`,
+    description: `Read the ${page.title} for Zupericon.`,
     alternates: {
       canonical: "/refund-policy",
     },
