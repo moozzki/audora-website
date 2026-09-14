@@ -28,7 +28,7 @@ function HomeContent() {
 
 export default function Home() {
   return (
-    <LandingLayout>
+    <LandingLayout showRecentSales>
       <HomeContent />
     </LandingLayout>
   );

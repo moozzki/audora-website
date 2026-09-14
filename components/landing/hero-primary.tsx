@@ -1,8 +1,66 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { AlertTriangle, Sparkles, ArrowRight } from "lucide-react";
+import { animate, motion, useMotionValue, useMotionValueEvent } from "framer-motion";
+import { Sparkles, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import { CarouselIcon } from "@/components/landing/carousel-icon";
+
+const DUMMY_GENERATED_ICONS = 605;
+const FALLBACK_GENERATED_ICONS = 829;
+
+function GeneratedIconsCounter() {
+  const [target, setTarget] = useState(FALLBACK_GENERATED_ICONS);
+  const [displayValue, setDisplayValue] = useState(0);
+  const count = useMotionValue(0);
+
+  useMotionValueEvent(count, "change", (latest) => {
+    setDisplayValue(Math.round(latest));
+  });
+
+  useEffect(() => {
+    const controls = animate(count, target, {
+      duration: 1.8,
+      ease: "easeOut",
+    });
+
+    return () => controls.stop();
+  }, [count, target]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function fetchGenerationCount() {
+      try {
+        const response = await fetch("/api/generations/count");
+        const data = await response.json();
+
+        if (isMounted && data.success && typeof data.count === "number") {
+          setTarget(data.count + DUMMY_GENERATED_ICONS);
+        }
+      } catch (error) {
+        console.error("Error loading generation count:", error);
+      }
+    }
+
+    fetchGenerationCount();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  return (
+    <motion.span
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="inline-flex items-center gap-1.5 py-1 px-3 mb-6 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-sans font-bold tracking-widest uppercase"
+    >
+      <Sparkles className="size-3.5" aria-hidden="true" />
+      {displayValue.toLocaleString()}+ generated icons
+    </motion.span>
+  );
+}
 
 export function HeroPrimary() {
   const redirectToSignIn = (e?: React.FormEvent) => {
@@ -15,28 +73,8 @@ export function HeroPrimary() {
 
   return (
     <section className="relative flex flex-col items-center justify-center px-6 pt-0 pb-20 md:pb-32 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        role="status"
-        className="mb-10 flex w-full max-w-3xl items-center justify-center gap-3 rounded-2xl border border-amber-300/60 bg-amber-50 px-5 py-3 text-center text-sm font-medium text-amber-900 shadow-sm dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-200"
-      >
-        <AlertTriangle className="size-5 shrink-0" aria-hidden="true" />
-        <span>
-          For Indonesian users: payments through Pakasir are temporarily under maintenance. Please try again later.
-        </span>
-      </motion.div>
-
       <div className="max-w-4xl text-center z-10 w-full">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-block py-1 px-3 mb-6 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-sans font-bold tracking-widest uppercase"
-        >
-          ðŸš€ We are officially live!
-        </motion.span>
+        <GeneratedIconsCounter />
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
